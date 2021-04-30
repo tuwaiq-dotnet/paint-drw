@@ -26,11 +26,15 @@ namespace read
                     * all shapes props - string
                     */
                     Console.Clear();
-                    Console.WriteLine(reader.ReadString());
-                    Console.WriteLine(reader.ReadString());
-                    Console.WriteLine(reader.ReadString());
+                    int magicNumber = reader.ReadInt32();
+                    if (magicNumber != 4477527) throw new Exception("fuck!");
+                    Console.WriteLine(reader.ReadInt32());
                     Console.WriteLine(reader.ReadInt32());
                     Console.WriteLine(reader.ReadString());
+                    Console.WriteLine(reader.ReadInt32());
+                    string shapes = reader.ReadString();
+                    Console.WriteLine(shapes);
+
                 }
             }
 

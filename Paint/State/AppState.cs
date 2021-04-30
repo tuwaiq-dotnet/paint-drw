@@ -130,9 +130,9 @@ namespace Paint.State
             shapesCount--;
         }
 
-        public string StringifyShapes()
+        public string StringifyShape(Shape shape)
         {
-            return "\n" + JsonConvert.SerializeObject(Shapes, Formatting.Indented, new JsonSerializerSettings { PreserveReferencesHandling = PreserveReferencesHandling.Objects }) + "\n";
+            return JsonConvert.SerializeObject(Shapes, Formatting.Indented, new JsonSerializerSettings { PreserveReferencesHandling = PreserveReferencesHandling.Objects });
         }
 
         public string StringifySettings()
@@ -161,6 +161,7 @@ namespace Paint.State
 
                     string parsedSettings = reader.ReadString();
                     Debug.WriteLine("THICKNESS READ FROM FILE: " + parsedSettings[19]);
+  
                 }
             }
         }
@@ -170,14 +171,15 @@ namespace Paint.State
 
             using (BinaryWriter binWriter = new BinaryWriter(File.Open(FILE_NAME, FileMode.Create)))
             {
-                Random rnd = new Random();
-                int randomThickness = rnd.Next(1, 13);
-                this.SetThickness(randomThickness);
-                binWriter.Write("DRW\n");
-                binWriter.Write("Paint Version 1.0.0(1)-alpha");
-                binWriter.Write(StringifySettings());
+                binWriter.Write(0x445257); // 0x445257 => DRW // int
+                binWriter.Write(Settings.Thickness); //int
+                binWriter.Write(Settings.DashStyleIndex); //int
+                binWriter.Write(Settings.Color.ToString()); //string
                 binWriter.Write(ShapesCount);
-                binWriter.Write(StringifyShapes());
+                foreach(var shape in shapes)
+                {
+                    binWriter.Write(StringifyShape(shape));
+                }
             }
 
             Process.Start("explorer.exe", "/select, " + Directory.GetCurrentDirectory() + "\\" + FILE_NAME);
