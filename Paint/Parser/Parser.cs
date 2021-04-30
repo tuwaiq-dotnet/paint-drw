@@ -14,8 +14,8 @@ namespace Paint.Parser
 {
 	public class Parser
 	{
-		private Tokenizer tokenizer;
-		public Parser(Tokenizer tokenizer)
+		private Tokenizer.Tokenizer tokenizer;
+		public Parser(Tokenizer.Tokenizer tokenizer)
 		{
 			this.tokenizer = tokenizer;
 		}

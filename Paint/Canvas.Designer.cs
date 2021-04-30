@@ -178,7 +178,6 @@ namespace Paint
             this.PaintToolsStrip.Size = new System.Drawing.Size(1160, 99);
             this.PaintToolsStrip.TabIndex = 1;
             this.PaintToolsStrip.Text = "Paint Tools";
-            this.PaintToolsStrip.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.PaintToolsStrip_ItemClicked);
             // 
             // LineButton
             // 

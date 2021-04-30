@@ -12,16 +12,12 @@ namespace Paint.Shapes
         {
             Start = new();
             End = new();
-            pen = new(DefaultSettings.Color, DefaultSettings.Thickness);
-            pen.DashStyle = DefaultSettings.DashStyle;
             type = ShapeType.Rectangle;
         }
         public Rectan(Point start, Point end) : base()
         {
             Start = start;
             End = end;
-            pen = new(DefaultSettings.Color, DefaultSettings.Thickness);
-            pen.DashStyle = DefaultSettings.DashStyle;
             type = ShapeType.Rectangle;
         }
         public override void Draw(Graphics g)
