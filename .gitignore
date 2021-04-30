@@ -3,4 +3,5 @@
 .vscode
 bin/
 obj/
-*.can
+*.drw
+drw-reader/

@@ -51,7 +51,6 @@ namespace Paint
             this.RelocateButton = new System.Windows.Forms.ToolStripButton();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.button1 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
             this.IOToolStrip.SuspendLayout();
             this.PaintToolsStrip.SuspendLayout();
@@ -264,38 +263,6 @@ namespace Paint
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14",
-            "15",
-            "16",
-            "17",
-            "18",
-            "19",
-            "20",
-            "21",
-            "22",
-            "23",
-            "24",
-            "25",
-            "26",
-            "27",
-            "28"});
-            this.comboBox1.Location = new System.Drawing.Point(646, 81);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 23);
-            this.comboBox1.TabIndex = 3;
-            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(819, 80);
@@ -313,7 +280,6 @@ namespace Paint
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1160, 357);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.PaintToolsStrip);
             this.Controls.Add(this.IOToolStrip);
@@ -323,8 +289,6 @@ namespace Paint
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Canvas_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Canvas_Paint);
-            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Canvas_MouseClick);
-            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Canvas_MouseMove);
             this.IOToolStrip.ResumeLayout(false);
             this.IOToolStrip.PerformLayout();
             this.PaintToolsStrip.ResumeLayout(false);
@@ -357,7 +321,6 @@ namespace Paint
         private System.Windows.Forms.ToolStripButton ColorPickerButton;
         private System.Windows.Forms.ToolStripButton RelocateButton;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button2;
     }
 }
