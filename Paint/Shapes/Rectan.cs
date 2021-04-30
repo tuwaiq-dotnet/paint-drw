@@ -8,7 +8,6 @@ namespace Paint.Shapes
 
     public class Rectan: Borderable
     {
-        private Pen pen;
         public Rectan() : base()
         {
             Start = new();
@@ -25,44 +24,20 @@ namespace Paint.Shapes
             pen.DashStyle = DefaultSettings.DashStyle;
             type = ShapeType.Rectangle;
         }
-        protected override Color Color
-        {
-            get
-            {
-                return pen.Color;
-            }
-            set
-            {
-                pen.Color = value;
-            }
-        }
-        protected override float Thickness
-        {
-            get
-            {
-                return pen.Width;
-            }
-            set
-            {
-                pen.Width = value;
-            }
-        }
-        protected override DashStyle Style
-        {
-            get
-            {
-                return pen.DashStyle;
-            }
-            set
-            {
-                pen.DashStyle = value;
-            }
-        }
         public override void Draw(Graphics g)
         {
             if (isSelected)
                 g.DrawRectangle(borderPen, Start.X - borderOffset, Start.Y - borderOffset, Width + borderOffset * 2, Height + borderOffset * 2);
-            g.DrawRectangle(pen, Start.X, Start.Y, Width, Height);
+            if (isFilled)
+            {
+                g.FillRectangle(new SolidBrush(Color), Start.X, Start.Y, Width, Height);
+            }
+            else
+            {
+                Pen p = new Pen(Color, Thickness);
+                p.DashStyle = Style;
+                g.DrawRectangle(p, Start.X, Start.Y, Width, Height);
+            }
         }
     }
 }

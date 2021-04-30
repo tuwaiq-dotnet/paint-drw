@@ -8,11 +8,11 @@ namespace Paint
     {
         internal static Color Color = Color.Black;
         internal static float Thickness = 5;
-        internal static DashStyle DashStyle = DashStyle.Solid;
+        internal static DashStyle Style = DashStyle.Solid;
 
 
         internal static Color BorderColor = Color.Gray;
         internal static float BorderThickness = 3;
-        internal static DashStyle BorderDashStyle = DashStyle.Dash;
+        internal static DashStyle BorderStyle = DashStyle.Dash;
     }
 }

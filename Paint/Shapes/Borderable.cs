@@ -53,10 +53,10 @@ namespace Paint.Shapes
             }
         }
 
-        public Borderable()
+        public Borderable() :base()
         {
             borderPen = new(DefaultSettings.BorderColor, DefaultSettings.BorderThickness);
-            BorderStyle = DefaultSettings.BorderDashStyle;
+            BorderStyle = DefaultSettings.BorderStyle;
         }
         public bool Contains(Point p)
         {
