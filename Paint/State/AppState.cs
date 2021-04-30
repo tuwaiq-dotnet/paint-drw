@@ -11,7 +11,7 @@
  */
 
 using Newtonsoft.Json;
-using Paint.Drawing;
+using Paint.Shapes;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -24,20 +24,20 @@ namespace Paint.State
     class AppState
     {
         const string FILE_NAME = "Untitled.drw";
+        const int MAGIC_NUMBER = 0;
 
-        private AppSettings settings;
+        private DefaultSettings settings;
         private List<Shape> shapes;
         private Shape currentShape;
         private int shapesCount;
         private ShapeType selectedShape;
-        private ToolType selectedTool;
 
         public List<Shape> Shapes
         {
             get { return shapes; }
         }
 
-        public AppSettings Settings
+        public DefaultSettings Settings
         {
             get { return settings; }
         }
@@ -52,11 +52,6 @@ namespace Paint.State
             get { return selectedShape; }
         }
 
-        public ToolType SelectedTool
-        {
-            get { return selectedTool; }
-        }
-
         public int ShapesCount
         {
             get { return shapesCount; }
@@ -65,25 +60,10 @@ namespace Paint.State
         public AppState()
         {
             shapes = new List<Shape>();
-            settings = new AppSettings();
+            settings = new DefaultSettings();
             currentShape = null;
+            shapesCount = 0;
             selectedShape = ShapeType.Line;
-            selectedTool = ToolType.Rectangler;
-        }
-
-        public void SetThickness(int thickness)
-        {
-            settings.SetSettings(Settings.Color, thickness, Settings.DashStyleIndex);
-        }
-
-        public void SetDashStyle(int dashStyleIndex)
-        {
-            settings.SetSettings(settings.Color, settings.Thickness, dashStyleIndex);
-        }
-
-        public void SetColor(Color color)
-        {
-            settings.SetSettings(color, settings.Thickness, settings.DashStyleIndex);
         }
 
         public void ClearCurrentShape()
@@ -96,26 +76,9 @@ namespace Paint.State
             this.currentShape = currentShape;
         }
 
-        public void SetCurrentShapeX1Y1(int x, int y)
-        {
-            this.currentShape.x1 = x;
-            this.currentShape.y1 = y;
-        }
-
-        public void SetCurrentShapeX2Y2(int x, int y)
-        {
-            this.currentShape.x2 = x;
-            this.currentShape.y2 = y;
-        }
-
         public void SetSelectedShape(ShapeType selectedShape)
         {
             this.selectedShape = selectedShape;
-        }
-
-        public void SetSelectedTool(ToolType selectedTool)
-        {
-            this.selectedTool = selectedTool;
         }
 
         public void AddShape(Shape shape)
@@ -130,59 +93,76 @@ namespace Paint.State
             shapesCount--;
         }
 
-        public string StringifyShape(Shape shape)
+        public string StringifyShapes()
         {
-            return JsonConvert.SerializeObject(Shapes, Formatting.Indented, new JsonSerializerSettings { PreserveReferencesHandling = PreserveReferencesHandling.Objects });
+            return JsonConvert.SerializeObject(Shapes, Formatting.Indented);
         }
 
         public string StringifySettings()
         {
-            return "\n" + JsonConvert.SerializeObject(Settings, Formatting.Indented) + "\n";
+            return JsonConvert.SerializeObject(Settings, Formatting.Indented);
         }
 
-        public void import()
+        public void Import()
         {
             if (File.Exists(FILE_NAME))
             {
                 using (BinaryReader reader = new BinaryReader(File.Open(FILE_NAME, FileMode.Open)))
                 {
-                    /*
-                    * DRW - string
-                    * Version - string
-                    * Appsetings - string
-                    * number of drawn shapes - int
-                    * all shapes props - string
-                    */
+                    // Faisal Section
+                    // Run the app
+                    // add a few shapes
+                    // Add Tokenizer
+                    // Add Parser
+                    // return new shapes
+                    string stringOfShapes = reader.ReadString();
+                    Debug.WriteLine(stringOfShapes);
 
-                    if (!reader.ReadString().Equals("DRW")) Debug.WriteLine("ERROR");
-
-                    // skip version
-                    reader.ReadString();
-
-                    string parsedSettings = reader.ReadString();
-                    Debug.WriteLine("THICKNESS READ FROM FILE: " + parsedSettings[19]);
-  
+                    /* OUTPUT STRING
+                     [
+                          {
+                            "Start": "20, 30",
+                            "End": "40, 50",
+                            "Width": 20,
+                            "Height": 20,
+                            "IsSelected": false,
+                            "Type": 0
+                          },
+                          {
+                            "Start": "20, 30",
+                            "End": "40, 50",
+                            "Width": 20,
+                            "Height": 20,
+                            "IsSelected": false,
+                            "Type": 2
+                          }
+                      ]
+                     */
                 }
             }
         }
 
-        public void save()
+        public void Save()
         {
 
             using (BinaryWriter binWriter = new BinaryWriter(File.Open(FILE_NAME, FileMode.Create)))
             {
-                binWriter.Write(0x445257); // 0x445257 => DRW // int
-                binWriter.Write(Settings.Thickness); //int
-                binWriter.Write(Settings.DashStyleIndex); //int
-                binWriter.Write(Settings.Color.ToString()); //string
-                binWriter.Write(ShapesCount);
-                foreach(var shape in shapes)
-                {
-                    binWriter.Write(StringifyShape(shape));
-                }
+                binWriter.Write(StringifyShapes());
             }
 
             Process.Start("explorer.exe", "/select, " + Directory.GetCurrentDirectory() + "\\" + FILE_NAME);
         }
+
+        public void Recompile()
+        {
+            // Younes section
+            //TODO
+        }
+
+        // Anas Section
+        // Add all Shapes classes implementation here
+        // update shapes from here
+        // add any method you need like GetCurrentShape() or setCurrentShape();
     }
 }
+
