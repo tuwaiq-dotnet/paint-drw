@@ -6,6 +6,7 @@ namespace Paint.Shapes
 {
     public abstract class Shape
     {
+        protected Anchors anchors;
         protected ShapeType type;
         protected bool isSelected;
         protected Point start;
@@ -21,7 +22,7 @@ namespace Paint.Shapes
         public int Height { get { return End.Y - Start.Y; } }
         public bool IsSelected { get { return isSelected; } }
         public ShapeType Type { get { return type; } }
-        public bool IsFilled{ get { return isFilled; } }
+        public bool IsFilled { get { return isFilled; } }
         public Color Color { get { return color; } set { color = value; } }
         public float Thickness { get { return thickness; } set { thickness = value; } }
         public DashStyle Style { get { return style; } set { style = value; } }
@@ -32,6 +33,15 @@ namespace Paint.Shapes
             Thickness = DefaultSettings.Thickness;
             Style = DefaultSettings.Style;
         }
+
+        public Shape(int anchorsCount)
+        {
+            Color = DefaultSettings.Color;
+            Thickness = DefaultSettings.Thickness;
+            Style = DefaultSettings.Style;
+            anchors = new(anchorsCount);
+        }
+
         public void Move(Point point)
         {
             int xDiff = End.X - Start.X;
@@ -39,23 +49,75 @@ namespace Paint.Shapes
             Start = point;
             End = new(Start.X + xDiff, Start.Y + yDiff);
         }
-        public void Move(int x, int y)
-        {
-            int xDiff = End.X - Start.X;
-            int yDiff = End.Y - Start.Y;
-            Start = new(x, y);
-            End = new(x + xDiff, y + yDiff);
-        }
+        public void Move(int x, int y) { Move(new(x, y)); }
+        public void Move(int x, int y, int xDelta, int yDelta) { Move(new(x - xDelta, y - yDelta)); }
         public void Resize(Point start, Point end)
         {
             Start = start;
             End = end;
         }
+        public void Resize(int width, int height) { Resize(Start, new(Start.X + width, Start.Y + height)); }
+        public void Resize(AnchorDirection direction, Point p)
+        {
+            switch (direction)
+            {
+                case AnchorDirection.North:
+                    Start = new(Start.X, Start.Y + (p.Y - Start.Y));
+                    break;
+                case AnchorDirection.NorthEast:
+                    Start = new(Start.X, Start.Y + (p.Y - Start.Y));
+                    End = new(End.X + (p.X - End.X), End.Y);
+                    break;
+                case AnchorDirection.East:
+                    End = new(End.X + (p.X - End.X), End.Y);
+                    break;
+                case AnchorDirection.SouthEast:
+                    End = new(End.X + (p.X - End.X), End.Y + (p.Y - End.Y));
+                    break;
+                case AnchorDirection.South:
+                    End = new(End.X, End.Y + (p.Y - End.Y));
+                    break;
+                case AnchorDirection.SouthWest:
+                    Start = new(Start.X + (p.X - Start.X), Start.Y);
+                    End = new(End.X, End.Y + (p.Y - End.Y));
+                    break;
+                case AnchorDirection.West:
+                    Start = new(Start.X + (p.X - Start.X), Start.Y);
+                    break;
+                case AnchorDirection.NorthWest:
+                    Start = new(Start.X + (p.X - Start.X), Start.Y + (p.Y - Start.Y));
+                    break;
+                default:
+                    return;
+            }
+        }
+
         public void Select() { isSelected = true; }
         public void Fill() { isFilled = true; }
         public void Unselect() { isSelected = false; }
         public void Unfill() { isFilled = false; }
+        public bool Contains(Point p) { return Contains(p.X, p.Y); }
+        public bool Contains(int x, int y)
+        {
+            return
+               x >= Start.X &&
+               x <= End.X &&
+               y >= Start.Y &&
+               y <= End.Y;
 
+        }
+        public AnchorDirection OnAnchor(Point p) { return anchors.OnAnchor(p); }
+        protected void DrawBorder(Graphics g)
+        {
+            Pen p = new(DefaultSettings.BorderColor, DefaultSettings.BorderThickness);
+            p.DashStyle = DefaultSettings.BorderStyle;
+            g.DrawRectangle(p,
+                Start.X - DefaultSettings.BorderOffset,
+                Start.Y - DefaultSettings.BorderOffset,
+                Width + DefaultSettings.BorderOffset * 2,
+                Height + DefaultSettings.BorderOffset * 2);
+            anchors.Draw(Start, End, g);
+        }
         public abstract void Draw(Graphics g);
     }
 

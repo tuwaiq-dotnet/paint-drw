@@ -5,13 +5,13 @@ namespace Paint.Shapes
 {
     public class Line : Shape
     {
-        public Line()
+        public Line():base(2)
         {
             Start = new();
             End = new();
             type = ShapeType.Line;
         }
-        public Line(Point start, Point end) : base()
+        public Line(Point start, Point end) : base(2)
         {
             Start = start;
             End = end;

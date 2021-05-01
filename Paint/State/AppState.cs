@@ -11,13 +11,10 @@
  */
 
 using Newtonsoft.Json;
-using Paint.Shapes;
-using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Drawing;
 using System.IO;
-using System.Text;
+using Paint.Shapes;
 
 namespace Paint.State
 {

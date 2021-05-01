@@ -73,7 +73,7 @@ namespace Paint
             this.IOToolStrip.Location = new System.Drawing.Point(0, 0);
             this.IOToolStrip.Name = "IOToolStrip";
             this.IOToolStrip.Padding = new System.Windows.Forms.Padding(0);
-            this.IOToolStrip.Size = new System.Drawing.Size(1160, 43);
+            this.IOToolStrip.Size = new System.Drawing.Size(2486, 46);
             this.IOToolStrip.TabIndex = 0;
             this.IOToolStrip.Text = "I/O Tools";
             // 
@@ -83,7 +83,7 @@ namespace Paint
             this.newToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("newToolStripButton.Image")));
             this.newToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.newToolStripButton.Name = "newToolStripButton";
-            this.newToolStripButton.Size = new System.Drawing.Size(40, 40);
+            this.newToolStripButton.Size = new System.Drawing.Size(52, 40);
             this.newToolStripButton.Text = "&New";
             // 
             // openToolStripButton
@@ -92,7 +92,7 @@ namespace Paint
             this.openToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("openToolStripButton.Image")));
             this.openToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.openToolStripButton.Name = "openToolStripButton";
-            this.openToolStripButton.Size = new System.Drawing.Size(40, 40);
+            this.openToolStripButton.Size = new System.Drawing.Size(52, 40);
             this.openToolStripButton.Text = "&Open";
             // 
             // saveToolStripButton
@@ -101,7 +101,7 @@ namespace Paint
             this.saveToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripButton.Image")));
             this.saveToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.saveToolStripButton.Name = "saveToolStripButton";
-            this.saveToolStripButton.Size = new System.Drawing.Size(40, 40);
+            this.saveToolStripButton.Size = new System.Drawing.Size(52, 40);
             this.saveToolStripButton.Text = "&Save";
             // 
             // printToolStripButton
@@ -110,13 +110,13 @@ namespace Paint
             this.printToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("printToolStripButton.Image")));
             this.printToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.printToolStripButton.Name = "printToolStripButton";
-            this.printToolStripButton.Size = new System.Drawing.Size(40, 40);
+            this.printToolStripButton.Size = new System.Drawing.Size(52, 40);
             this.printToolStripButton.Text = "&Print";
             // 
             // toolStripSeparator
             // 
             this.toolStripSeparator.Name = "toolStripSeparator";
-            this.toolStripSeparator.Size = new System.Drawing.Size(6, 43);
+            this.toolStripSeparator.Size = new System.Drawing.Size(6, 46);
             // 
             // cutToolStripButton
             // 
@@ -124,7 +124,7 @@ namespace Paint
             this.cutToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("cutToolStripButton.Image")));
             this.cutToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.cutToolStripButton.Name = "cutToolStripButton";
-            this.cutToolStripButton.Size = new System.Drawing.Size(40, 40);
+            this.cutToolStripButton.Size = new System.Drawing.Size(52, 40);
             this.cutToolStripButton.Text = "C&ut";
             // 
             // copyToolStripButton
@@ -133,7 +133,7 @@ namespace Paint
             this.copyToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("copyToolStripButton.Image")));
             this.copyToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.copyToolStripButton.Name = "copyToolStripButton";
-            this.copyToolStripButton.Size = new System.Drawing.Size(40, 40);
+            this.copyToolStripButton.Size = new System.Drawing.Size(52, 40);
             this.copyToolStripButton.Text = "&Copy";
             // 
             // pasteToolStripButton
@@ -142,13 +142,13 @@ namespace Paint
             this.pasteToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("pasteToolStripButton.Image")));
             this.pasteToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.pasteToolStripButton.Name = "pasteToolStripButton";
-            this.pasteToolStripButton.Size = new System.Drawing.Size(40, 40);
+            this.pasteToolStripButton.Size = new System.Drawing.Size(52, 40);
             this.pasteToolStripButton.Text = "&Paste";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 43);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 46);
             // 
             // helpToolStripButton
             // 
@@ -156,7 +156,7 @@ namespace Paint
             this.helpToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("helpToolStripButton.Image")));
             this.helpToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.helpToolStripButton.Name = "helpToolStripButton";
-            this.helpToolStripButton.Size = new System.Drawing.Size(40, 40);
+            this.helpToolStripButton.Size = new System.Drawing.Size(52, 40);
             this.helpToolStripButton.Text = "He&lp";
             // 
             // PaintToolsStrip
@@ -170,12 +170,12 @@ namespace Paint
             this.ResizeButton,
             this.ColorPickerButton,
             this.RelocateButton});
-            this.PaintToolsStrip.Location = new System.Drawing.Point(0, 43);
-            this.PaintToolsStrip.Margin = new System.Windows.Forms.Padding(2);
+            this.PaintToolsStrip.Location = new System.Drawing.Point(0, 46);
+            this.PaintToolsStrip.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.PaintToolsStrip.Name = "PaintToolsStrip";
             this.PaintToolsStrip.Padding = new System.Windows.Forms.Padding(0);
             this.PaintToolsStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.PaintToolsStrip.Size = new System.Drawing.Size(1160, 99);
+            this.PaintToolsStrip.Size = new System.Drawing.Size(2486, 102);
             this.PaintToolsStrip.TabIndex = 1;
             this.PaintToolsStrip.Text = "Paint Tools";
             // 
@@ -219,7 +219,7 @@ namespace Paint
             // 
             this.Seperator1.Margin = new System.Windows.Forms.Padding(16, 0, 16, 0);
             this.Seperator1.Name = "Seperator1";
-            this.Seperator1.Size = new System.Drawing.Size(6, 99);
+            this.Seperator1.Size = new System.Drawing.Size(6, 102);
             // 
             // ResizeButton
             // 
@@ -254,9 +254,10 @@ namespace Paint
             // 
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Location = new System.Drawing.Point(900, 80);
+            this.button1.Location = new System.Drawing.Point(1929, 197);
+            this.button1.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(161, 57);
             this.button1.TabIndex = 2;
             this.button1.Text = "Save";
             this.button1.UseVisualStyleBackColor = true;
@@ -264,9 +265,10 @@ namespace Paint
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(819, 80);
+            this.button2.Location = new System.Drawing.Point(1755, 197);
+            this.button2.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(161, 57);
             this.button2.TabIndex = 4;
             this.button2.Text = "Import";
             this.button2.UseVisualStyleBackColor = true;
@@ -274,20 +276,22 @@ namespace Paint
             // 
             // Canvas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1160, 357);
+            this.ClientSize = new System.Drawing.Size(2486, 881);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.PaintToolsStrip);
             this.Controls.Add(this.IOToolStrip);
             this.DoubleBuffered = true;
-            this.Margin = new System.Windows.Forms.Padding(1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Canvas";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Canvas_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Canvas_Paint);
+            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Canvas_MouseClick);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Canvas_MouseMove);
             this.IOToolStrip.ResumeLayout(false);
             this.IOToolStrip.PerformLayout();
             this.PaintToolsStrip.ResumeLayout(false);

@@ -6,15 +6,16 @@ namespace Paint.Shapes
 {
 
 
-    public class Rectan: Borderable
+    public class Rectan: Shape
     {
-        public Rectan() : base()
+        public Rectan() : base(8)
         {
             Start = new();
             End = new();
+            anchors = new(8);
             type = ShapeType.Rectangle;
         }
-        public Rectan(Point start, Point end) : base()
+        public Rectan(Point start, Point end) : base(8)
         {
             Start = start;
             End = end;
@@ -22,12 +23,8 @@ namespace Paint.Shapes
         }
         public override void Draw(Graphics g)
         {
-            if (isSelected)
-                g.DrawRectangle(borderPen, Start.X - borderOffset, Start.Y - borderOffset, Width + borderOffset * 2, Height + borderOffset * 2);
-            if (isFilled)
-            {
-                g.FillRectangle(new SolidBrush(Color), Start.X, Start.Y, Width, Height);
-            }
+            if (isSelected) DrawBorder(g);
+            if (isFilled) g.FillRectangle(new SolidBrush(Color), Start.X, Start.Y, Width, Height);
             else
             {
                 Pen p = new Pen(Color, Thickness);
