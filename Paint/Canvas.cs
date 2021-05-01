@@ -30,24 +30,19 @@ namespace Paint
         public Canvas()
         {
             InitializeComponent();
-
+            MinimumSize = new Size(800, 700);
             // use uiUtils NOT state!!
             state.SelectedTool = Tools.Selector;
         }
 
         private void Canvas_Load(object sender, EventArgs e)
         {
-            //Remove native title bar and control
-            FormBorderStyle = FormBorderStyle.None;
-            //Set application to fixed Width and Height
-            Width = 1280;
-            Height = 720;
+            //this.ControlBox = false;
             state.SelectedTool = Tools.Circle;
             //Hide source text box
             textBox.Visible = false;
             openBtn.BackgroundImageLayout = ImageLayout.Center;
             moveBtn.BackgroundImageLayout = ImageLayout.Center;
-            resizeBtn.BackgroundImageLayout = ImageLayout.Center;
         }
 
         private void Canvas_Paint(object sender, PaintEventArgs e)
@@ -55,8 +50,7 @@ namespace Paint
             if (isSourceView)
             {
                 textBox.Visible = true;
-                textBox.Text = state.StringifyShapes();
-                textBox.Height = 300;
+                textBox.Height = Height - 220;
             }
             else
             {
@@ -67,6 +61,8 @@ namespace Paint
                 {
                     uiUtils.currentDrawingShape.Draw(e.Graphics);
                 }
+
+                textBox.Text = state.StringifyShapes();
             }
         }
 
@@ -176,47 +172,26 @@ namespace Paint
             WindowState = FormWindowState.Minimized;
         }
 
-        private void closeBtn_MouseHover(object sender, EventArgs e)
-        {
-            closeBtn.BackgroundImage = new Bitmap(Properties.Resources.close_active);
-        }
-
-        private void closeBtn_MouseLeave(object sender, EventArgs e)
-        {
-            closeBtn.BackgroundImage = new Bitmap(Properties.Resources.close);
-        }
-
-        private void minimizeBtn_MouseHover(object sender, EventArgs e)
-        {
-            minimizeBtn.BackgroundImage = new Bitmap(Properties.Resources.minimize_active);
-
-        }
-
-        private void minimizeBtn_MouseLeave(object sender, EventArgs e)
-        {
-            minimizeBtn.BackgroundImage = new Bitmap(Properties.Resources.minimize);
-        }
-
         private void saveBtn_MouseHover(object sender, EventArgs e)
         {
-            saveBtn.BackgroundImage = new Bitmap(Properties.Resources.save_hover);
+            saveBtn.BackgroundImage = new Bitmap(Properties.Resources.save_btn_hover);
 
         }
 
         private void saveBtn_MouseLeave(object sender, EventArgs e)
         {
-            saveBtn.BackgroundImage = new Bitmap(Properties.Resources.save);
+            saveBtn.BackgroundImage = new Bitmap(Properties.Resources.save_btn);
 
         }
 
         private void openBtn_MouseHover(object sender, EventArgs e)
         {
-            openBtn.BackgroundImage = new Bitmap(Properties.Resources.open_hover);
+            openBtn.BackgroundImage = new Bitmap(Properties.Resources.open_btn_hover);
         }
 
         private void openBtn_MouseLeave(object sender, EventArgs e)
         {
-            openBtn.BackgroundImage = new Bitmap(Properties.Resources.open);
+            openBtn.BackgroundImage = new Bitmap(Properties.Resources.open_btn);
         }
 
 
@@ -256,21 +231,18 @@ namespace Paint
         {
             drawBtn.BackgroundImage = new Bitmap(Properties.Resources.draw);
             moveBtn.BackgroundImage = new Bitmap(Properties.Resources.move_active);
-            resizeBtn.BackgroundImage = new Bitmap(Properties.Resources.resize);
         }
 
         private void resizeBtn_MouseClick(object sender, MouseEventArgs e)
         {
             drawBtn.BackgroundImage = new Bitmap(Properties.Resources.draw);
             moveBtn.BackgroundImage = new Bitmap(Properties.Resources.move);
-            resizeBtn.BackgroundImage = new Bitmap(Properties.Resources.resize_active);
         }
 
         private void drawBtn_MouseClick(object sender, MouseEventArgs e)
         {
             drawBtn.BackgroundImage = new Bitmap(Properties.Resources.draw_active);
             moveBtn.BackgroundImage = new Bitmap(Properties.Resources.move);
-            resizeBtn.BackgroundImage = new Bitmap(Properties.Resources.resize);
         }
 
         private void saveBtn_Click(object sender, EventArgs e)
@@ -295,6 +267,8 @@ namespace Paint
         {
             designBtn.BackgroundImage = new Bitmap(Properties.Resources.design_active);
             sourceBtn.BackgroundImage = new Bitmap(Properties.Resources.source_inactive);
+            if(textBox.Text.Length > 2)
+                state.Recompile(textBox.Text);
             isSourceView = false;
             textBox.Visible = false;
             this.Invalidate();

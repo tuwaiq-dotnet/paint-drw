@@ -91,28 +91,6 @@ namespace Paint.State
                     {
                         AddShape(ParserUtils.getShape(stringOfShapes, i));
                     }
-                    Debug.WriteLine(stringOfShapes);
-
-                    /* OUTPUT STRING
-                     [
-                          {
-                            "Start": "20, 30",
-                            "End": "40, 50",
-                            "Width": 20,
-                            "Height": 20,
-                            "IsSelected": false,
-                            "Type": 0
-                          },
-                          {
-                            "Start": "20, 30",
-                            "End": "40, 50",
-                            "Width": 20,
-                            "Height": 20,
-                            "IsSelected": false,
-                            "Type": 2
-                          }
-                      ]
-                     */
                 }
             }
         }
@@ -128,10 +106,16 @@ namespace Paint.State
             Process.Start("explorer.exe", "/select, " + Directory.GetCurrentDirectory() + "\\" + FILE_NAME);
         }
 
-        public void Recompile()
+        public void Recompile(string updateSource)
         {
-            // Younes section
-            //TODO
+            shapes = new List<Shape>();
+            ParserUtils.intParser(updateSource);
+            for (int i = 0; i < ParserUtils.parserCount(); i++)
+            {
+                AddShape(ParserUtils.getShape(updateSource, i));
+            }
+
+            Debug.WriteLine("RECOMPILE SUCCESS!");
         }
 
         // Anas Section

@@ -29,14 +29,11 @@ namespace Paint
         /// </summary>
         private void InitializeComponent()
         {
-            this.closeBtn = new System.Windows.Forms.Button();
-            this.minimizeBtn = new System.Windows.Forms.Button();
             this.designBtn = new System.Windows.Forms.Button();
             this.sourceBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.saveBtn = new System.Windows.Forms.Button();
             this.openBtn = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -45,51 +42,13 @@ namespace Paint
             this.lineBtn = new System.Windows.Forms.Button();
             this.drawBtn = new System.Windows.Forms.Button();
             this.moveBtn = new System.Windows.Forms.Button();
-            this.resizeBtn = new System.Windows.Forms.Button();
             this.textBox = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
-            // closeBtn
-            // 
-            this.closeBtn.BackColor = System.Drawing.Color.Transparent;
-            this.closeBtn.BackgroundImage = global::Paint.Properties.Resources.close;
-            this.closeBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.closeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.closeBtn.FlatAppearance.BorderSize = 0;
-            this.closeBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.closeBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.closeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.closeBtn.Location = new System.Drawing.Point(1238, 12);
-            this.closeBtn.Name = "closeBtn";
-            this.closeBtn.Size = new System.Drawing.Size(24, 24);
-            this.closeBtn.TabIndex = 0;
-            this.closeBtn.UseVisualStyleBackColor = false;
-            this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
-            this.closeBtn.MouseLeave += new System.EventHandler(this.closeBtn_MouseLeave);
-            this.closeBtn.MouseHover += new System.EventHandler(this.closeBtn_MouseHover);
-            // 
-            // minimizeBtn
-            // 
-            this.minimizeBtn.BackColor = System.Drawing.Color.Transparent;
-            this.minimizeBtn.BackgroundImage = global::Paint.Properties.Resources.minimize;
-            this.minimizeBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.minimizeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.minimizeBtn.FlatAppearance.BorderSize = 0;
-            this.minimizeBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.minimizeBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.minimizeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.minimizeBtn.Location = new System.Drawing.Point(1208, 12);
-            this.minimizeBtn.Name = "minimizeBtn";
-            this.minimizeBtn.Size = new System.Drawing.Size(24, 24);
-            this.minimizeBtn.TabIndex = 1;
-            this.minimizeBtn.UseVisualStyleBackColor = false;
-            this.minimizeBtn.Click += new System.EventHandler(this.minimizeBtn_Click);
-            this.minimizeBtn.MouseLeave += new System.EventHandler(this.minimizeBtn_MouseLeave);
-            this.minimizeBtn.MouseHover += new System.EventHandler(this.minimizeBtn_MouseHover);
-            // 
             // designBtn
             // 
+            this.designBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.designBtn.BackColor = System.Drawing.Color.Transparent;
             this.designBtn.BackgroundImage = global::Paint.Properties.Resources.design_active;
             this.designBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
@@ -98,7 +57,7 @@ namespace Paint
             this.designBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.designBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.designBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.designBtn.Location = new System.Drawing.Point(12, 648);
+            this.designBtn.Location = new System.Drawing.Point(12, 637);
             this.designBtn.Name = "designBtn";
             this.designBtn.Size = new System.Drawing.Size(100, 32);
             this.designBtn.TabIndex = 2;
@@ -107,6 +66,7 @@ namespace Paint
             // 
             // sourceBtn
             // 
+            this.sourceBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.sourceBtn.BackColor = System.Drawing.Color.Transparent;
             this.sourceBtn.BackgroundImage = global::Paint.Properties.Resources.source_inactive;
             this.sourceBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
@@ -115,7 +75,7 @@ namespace Paint
             this.sourceBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.sourceBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.sourceBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.sourceBtn.Location = new System.Drawing.Point(118, 648);
+            this.sourceBtn.Location = new System.Drawing.Point(118, 637);
             this.sourceBtn.Name = "sourceBtn";
             this.sourceBtn.Size = new System.Drawing.Size(100, 32);
             this.sourceBtn.TabIndex = 3;
@@ -127,7 +87,7 @@ namespace Paint
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(42, 82);
+            this.label1.Location = new System.Drawing.Point(65, 64);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 16);
             this.label1.TabIndex = 4;
@@ -135,8 +95,11 @@ namespace Paint
             // 
             // saveBtn
             // 
+            this.saveBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.saveBtn.BackColor = System.Drawing.Color.Transparent;
-            this.saveBtn.BackgroundImage = global::Paint.Properties.Resources.save;
+            this.saveBtn.BackgroundImage = global::Paint.Properties.Resources.save_btn;
             this.saveBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.saveBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.saveBtn.FlatAppearance.BorderSize = 0;
@@ -145,7 +108,7 @@ namespace Paint
             this.saveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.saveBtn.Location = new System.Drawing.Point(12, 12);
             this.saveBtn.Name = "saveBtn";
-            this.saveBtn.Size = new System.Drawing.Size(42, 42);
+            this.saveBtn.Size = new System.Drawing.Size(70, 32);
             this.saveBtn.TabIndex = 5;
             this.saveBtn.UseVisualStyleBackColor = false;
             this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
@@ -154,33 +117,25 @@ namespace Paint
             // 
             // openBtn
             // 
+            this.openBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.openBtn.BackColor = System.Drawing.Color.Transparent;
-            this.openBtn.BackgroundImage = global::Paint.Properties.Resources.open;
+            this.openBtn.BackgroundImage = global::Paint.Properties.Resources.open_btn;
             this.openBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.openBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.openBtn.FlatAppearance.BorderSize = 0;
             this.openBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.openBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.openBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.openBtn.Location = new System.Drawing.Point(70, 12);
+            this.openBtn.Location = new System.Drawing.Point(87, 12);
             this.openBtn.Name = "openBtn";
-            this.openBtn.Size = new System.Drawing.Size(42, 42);
+            this.openBtn.Size = new System.Drawing.Size(70, 32);
             this.openBtn.TabIndex = 6;
             this.openBtn.UseVisualStyleBackColor = false;
             this.openBtn.Click += new System.EventHandler(this.openBtn_Click);
             this.openBtn.MouseLeave += new System.EventHandler(this.openBtn_MouseLeave);
             this.openBtn.MouseHover += new System.EventHandler(this.openBtn_MouseHover);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Courier New", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label2.Location = new System.Drawing.Point(131, 18);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(26, 27);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "|";
             // 
             // label3
             // 
@@ -276,7 +231,7 @@ namespace Paint
             this.drawBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.drawBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.drawBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.drawBtn.Location = new System.Drawing.Point(163, 17);
+            this.drawBtn.Location = new System.Drawing.Point(412, 323);
             this.drawBtn.Name = "drawBtn";
             this.drawBtn.Size = new System.Drawing.Size(32, 32);
             this.drawBtn.TabIndex = 14;
@@ -293,7 +248,7 @@ namespace Paint
             this.moveBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.moveBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.moveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.moveBtn.Location = new System.Drawing.Point(207, 17);
+            this.moveBtn.Location = new System.Drawing.Point(260, 264);
             this.moveBtn.Name = "moveBtn";
             this.moveBtn.Size = new System.Drawing.Size(32, 32);
             this.moveBtn.TabIndex = 15;
@@ -301,35 +256,21 @@ namespace Paint
             this.moveBtn.Click += new System.EventHandler(this.moveBtn_Click);
             this.moveBtn.MouseClick += new System.Windows.Forms.MouseEventHandler(this.moveBtn_MouseClick);
             // 
-            // resizeBtn
-            // 
-            this.resizeBtn.BackColor = System.Drawing.Color.Transparent;
-            this.resizeBtn.BackgroundImage = global::Paint.Properties.Resources.resize;
-            this.resizeBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.resizeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.resizeBtn.FlatAppearance.BorderSize = 0;
-            this.resizeBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.resizeBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.resizeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.resizeBtn.Location = new System.Drawing.Point(245, 17);
-            this.resizeBtn.Name = "resizeBtn";
-            this.resizeBtn.Size = new System.Drawing.Size(32, 32);
-            this.resizeBtn.TabIndex = 16;
-            this.resizeBtn.UseVisualStyleBackColor = false;
-            this.resizeBtn.MouseClick += new System.Windows.Forms.MouseEventHandler(this.resizeBtn_MouseClick);
-            // 
             // textBox
             // 
             this.textBox.AcceptsReturn = true;
             this.textBox.AcceptsTab = true;
+            this.textBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.textBox.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.textBox.ForeColor = System.Drawing.Color.Teal;
-            this.textBox.Location = new System.Drawing.Point(131, 162);
+            this.textBox.Location = new System.Drawing.Point(87, 113);
             this.textBox.Multiline = true;
             this.textBox.Name = "textBox";
             this.textBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox.Size = new System.Drawing.Size(1050, 23);
+            this.textBox.Size = new System.Drawing.Size(1076, 23);
             this.textBox.TabIndex = 17;
             this.textBox.WordWrap = false;
             // 
@@ -340,7 +281,7 @@ namespace Paint
             "Solid",
             "Dot",
             "Dash"});
-            this.comboBox1.Location = new System.Drawing.Point(878, 267);
+            this.comboBox1.Location = new System.Drawing.Point(922, 12);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 23);
             this.comboBox1.TabIndex = 18;
@@ -354,7 +295,6 @@ namespace Paint
             this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.textBox);
-            this.Controls.Add(this.resizeBtn);
             this.Controls.Add(this.moveBtn);
             this.Controls.Add(this.drawBtn);
             this.Controls.Add(this.lineBtn);
@@ -363,14 +303,11 @@ namespace Paint
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.openBtn);
             this.Controls.Add(this.saveBtn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.sourceBtn);
             this.Controls.Add(this.designBtn);
-            this.Controls.Add(this.minimizeBtn);
-            this.Controls.Add(this.closeBtn);
             this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "Canvas";
@@ -387,15 +324,11 @@ namespace Paint
         }
 
         #endregion
-
-        private System.Windows.Forms.Button closeBtn;
-        private System.Windows.Forms.Button minimizeBtn;
         private System.Windows.Forms.Button designBtn;
         private System.Windows.Forms.Button sourceBtn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button saveBtn;
         private System.Windows.Forms.Button openBtn;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
@@ -404,7 +337,6 @@ namespace Paint
         private System.Windows.Forms.Button lineBtn;
         private System.Windows.Forms.Button drawBtn;
         private System.Windows.Forms.Button moveBtn;
-        private System.Windows.Forms.Button resizeBtn;
         private System.Windows.Forms.TextBox textBox;
         private System.Windows.Forms.ComboBox comboBox1;
     }
