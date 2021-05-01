@@ -31,7 +31,7 @@ namespace Paint
             InitializeComponent();
 
             // use uiUtils NOT state!!
-            state.SelectedTool = Tools.Rectangle;
+            state.SelectedTool = Tools.Selector;
         }
 
         private void Canvas_Load(object sender, EventArgs e)
