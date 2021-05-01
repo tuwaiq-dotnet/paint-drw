@@ -29,273 +29,348 @@ namespace Paint
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Canvas));
-            this.IOToolStrip = new System.Windows.Forms.ToolStrip();
-            this.newToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.printToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.cutToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.copyToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.pasteToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.helpToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.PaintToolsStrip = new System.Windows.Forms.ToolStrip();
-            this.LineButton = new System.Windows.Forms.ToolStripButton();
-            this.CircleButton = new System.Windows.Forms.ToolStripButton();
-            this.RectangleButton = new System.Windows.Forms.ToolStripButton();
-            this.Seperator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.ResizeButton = new System.Windows.Forms.ToolStripButton();
-            this.ColorPickerButton = new System.Windows.Forms.ToolStripButton();
-            this.RelocateButton = new System.Windows.Forms.ToolStripButton();
-            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.IOToolStrip.SuspendLayout();
-            this.PaintToolsStrip.SuspendLayout();
+            this.closeBtn = new System.Windows.Forms.Button();
+            this.minimizeBtn = new System.Windows.Forms.Button();
+            this.designBtn = new System.Windows.Forms.Button();
+            this.sourceBtn = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.saveBtn = new System.Windows.Forms.Button();
+            this.openBtn = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.rectangleBtn = new System.Windows.Forms.Button();
+            this.circleBtn = new System.Windows.Forms.Button();
+            this.lineBtn = new System.Windows.Forms.Button();
+            this.drawBtn = new System.Windows.Forms.Button();
+            this.moveBtn = new System.Windows.Forms.Button();
+            this.resizeBtn = new System.Windows.Forms.Button();
+            this.textBox = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
-            // IOToolStrip
+            // closeBtn
             // 
-            this.IOToolStrip.ImageScalingSize = new System.Drawing.Size(36, 36);
-            this.IOToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newToolStripButton,
-            this.openToolStripButton,
-            this.saveToolStripButton,
-            this.printToolStripButton,
-            this.toolStripSeparator,
-            this.cutToolStripButton,
-            this.copyToolStripButton,
-            this.pasteToolStripButton,
-            this.toolStripSeparator1,
-            this.helpToolStripButton});
-            this.IOToolStrip.Location = new System.Drawing.Point(0, 0);
-            this.IOToolStrip.Name = "IOToolStrip";
-            this.IOToolStrip.Padding = new System.Windows.Forms.Padding(0);
-            this.IOToolStrip.Size = new System.Drawing.Size(898, 43);
-            this.IOToolStrip.TabIndex = 0;
-            this.IOToolStrip.Text = "I/O Tools";
+            this.closeBtn.BackColor = System.Drawing.Color.Transparent;
+            this.closeBtn.BackgroundImage = global::Paint.Properties.Resources.close;
+            this.closeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.closeBtn.FlatAppearance.BorderSize = 0;
+            this.closeBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.closeBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.closeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.closeBtn.Location = new System.Drawing.Point(1238, 12);
+            this.closeBtn.Name = "closeBtn";
+            this.closeBtn.Size = new System.Drawing.Size(24, 24);
+            this.closeBtn.TabIndex = 0;
+            this.closeBtn.UseVisualStyleBackColor = false;
+            this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
+            this.closeBtn.MouseLeave += new System.EventHandler(this.closeBtn_MouseLeave);
+            this.closeBtn.MouseHover += new System.EventHandler(this.closeBtn_MouseHover);
             // 
-            // newToolStripButton
+            // minimizeBtn
             // 
-            this.newToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.newToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("newToolStripButton.Image")));
-            this.newToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.newToolStripButton.Name = "newToolStripButton";
-            this.newToolStripButton.Size = new System.Drawing.Size(40, 40);
-            this.newToolStripButton.Text = "&New";
+            this.minimizeBtn.BackColor = System.Drawing.Color.Transparent;
+            this.minimizeBtn.BackgroundImage = global::Paint.Properties.Resources.minimize;
+            this.minimizeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.minimizeBtn.FlatAppearance.BorderSize = 0;
+            this.minimizeBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.minimizeBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.minimizeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.minimizeBtn.Location = new System.Drawing.Point(1208, 12);
+            this.minimizeBtn.Name = "minimizeBtn";
+            this.minimizeBtn.Size = new System.Drawing.Size(24, 24);
+            this.minimizeBtn.TabIndex = 1;
+            this.minimizeBtn.UseVisualStyleBackColor = false;
+            this.minimizeBtn.Click += new System.EventHandler(this.minimizeBtn_Click);
+            this.minimizeBtn.MouseLeave += new System.EventHandler(this.minimizeBtn_MouseLeave);
+            this.minimizeBtn.MouseHover += new System.EventHandler(this.minimizeBtn_MouseHover);
             // 
-            // openToolStripButton
+            // designBtn
             // 
-            this.openToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.openToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("openToolStripButton.Image")));
-            this.openToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.openToolStripButton.Name = "openToolStripButton";
-            this.openToolStripButton.Size = new System.Drawing.Size(40, 40);
-            this.openToolStripButton.Text = "&Open";
+            this.designBtn.BackColor = System.Drawing.Color.Transparent;
+            this.designBtn.BackgroundImage = global::Paint.Properties.Resources.design_active;
+            this.designBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.designBtn.FlatAppearance.BorderSize = 0;
+            this.designBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.designBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.designBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.designBtn.Location = new System.Drawing.Point(12, 648);
+            this.designBtn.Name = "designBtn";
+            this.designBtn.Size = new System.Drawing.Size(100, 32);
+            this.designBtn.TabIndex = 2;
+            this.designBtn.UseVisualStyleBackColor = false;
+            this.designBtn.MouseClick += new System.Windows.Forms.MouseEventHandler(this.designBtn_MouseClick);
             // 
-            // saveToolStripButton
+            // sourceBtn
             // 
-            this.saveToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.saveToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripButton.Image")));
-            this.saveToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.saveToolStripButton.Name = "saveToolStripButton";
-            this.saveToolStripButton.Size = new System.Drawing.Size(40, 40);
-            this.saveToolStripButton.Text = "&Save";
+            this.sourceBtn.BackColor = System.Drawing.Color.Transparent;
+            this.sourceBtn.BackgroundImage = global::Paint.Properties.Resources.source_inactive;
+            this.sourceBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.sourceBtn.FlatAppearance.BorderSize = 0;
+            this.sourceBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.sourceBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.sourceBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sourceBtn.Location = new System.Drawing.Point(118, 648);
+            this.sourceBtn.Name = "sourceBtn";
+            this.sourceBtn.Size = new System.Drawing.Size(100, 32);
+            this.sourceBtn.TabIndex = 3;
+            this.sourceBtn.UseVisualStyleBackColor = false;
+            this.sourceBtn.MouseClick += new System.Windows.Forms.MouseEventHandler(this.sourceBtn_MouseClick);
             // 
-            // printToolStripButton
+            // label1
             // 
-            this.printToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.printToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("printToolStripButton.Image")));
-            this.printToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.printToolStripButton.Name = "printToolStripButton";
-            this.printToolStripButton.Size = new System.Drawing.Size(40, 40);
-            this.printToolStripButton.Text = "&Print";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label1.Location = new System.Drawing.Point(42, 82);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 16);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "File";
             // 
-            // toolStripSeparator
+            // saveBtn
             // 
-            this.toolStripSeparator.Name = "toolStripSeparator";
-            this.toolStripSeparator.Size = new System.Drawing.Size(6, 43);
+            this.saveBtn.BackColor = System.Drawing.Color.Transparent;
+            this.saveBtn.BackgroundImage = global::Paint.Properties.Resources.save;
+            this.saveBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.saveBtn.FlatAppearance.BorderSize = 0;
+            this.saveBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.saveBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.saveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.saveBtn.Location = new System.Drawing.Point(12, 12);
+            this.saveBtn.Name = "saveBtn";
+            this.saveBtn.Size = new System.Drawing.Size(42, 42);
+            this.saveBtn.TabIndex = 5;
+            this.saveBtn.UseVisualStyleBackColor = false;
+            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
+            this.saveBtn.MouseLeave += new System.EventHandler(this.saveBtn_MouseLeave);
+            this.saveBtn.MouseHover += new System.EventHandler(this.saveBtn_MouseHover);
             // 
-            // cutToolStripButton
+            // openBtn
             // 
-            this.cutToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.cutToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("cutToolStripButton.Image")));
-            this.cutToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.cutToolStripButton.Name = "cutToolStripButton";
-            this.cutToolStripButton.Size = new System.Drawing.Size(40, 40);
-            this.cutToolStripButton.Text = "C&ut";
+            this.openBtn.BackColor = System.Drawing.Color.Transparent;
+            this.openBtn.BackgroundImage = global::Paint.Properties.Resources.open;
+            this.openBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.openBtn.FlatAppearance.BorderSize = 0;
+            this.openBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.openBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.openBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.openBtn.Location = new System.Drawing.Point(70, 12);
+            this.openBtn.Name = "openBtn";
+            this.openBtn.Size = new System.Drawing.Size(42, 42);
+            this.openBtn.TabIndex = 6;
+            this.openBtn.UseVisualStyleBackColor = false;
+            this.openBtn.Click += new System.EventHandler(this.openBtn_Click);
+            this.openBtn.MouseLeave += new System.EventHandler(this.openBtn_MouseLeave);
+            this.openBtn.MouseHover += new System.EventHandler(this.openBtn_MouseHover);
             // 
-            // copyToolStripButton
+            // label2
             // 
-            this.copyToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.copyToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("copyToolStripButton.Image")));
-            this.copyToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.copyToolStripButton.Name = "copyToolStripButton";
-            this.copyToolStripButton.Size = new System.Drawing.Size(40, 40);
-            this.copyToolStripButton.Text = "&Copy";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Courier New", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label2.Location = new System.Drawing.Point(131, 18);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(26, 27);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "|";
             // 
-            // pasteToolStripButton
+            // label3
             // 
-            this.pasteToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.pasteToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("pasteToolStripButton.Image")));
-            this.pasteToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.pasteToolStripButton.Name = "pasteToolStripButton";
-            this.pasteToolStripButton.Size = new System.Drawing.Size(40, 40);
-            this.pasteToolStripButton.Text = "&Paste";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label3.Location = new System.Drawing.Point(199, 82);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(42, 16);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Tools";
             // 
-            // toolStripSeparator1
+            // label4
             // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 43);
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label4.Location = new System.Drawing.Point(365, 82);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(49, 16);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Colors";
             // 
-            // helpToolStripButton
+            // label5
             // 
-            this.helpToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.helpToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("helpToolStripButton.Image")));
-            this.helpToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.helpToolStripButton.Name = "helpToolStripButton";
-            this.helpToolStripButton.Size = new System.Drawing.Size(40, 40);
-            this.helpToolStripButton.Text = "He&lp";
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label5.Location = new System.Drawing.Point(542, 82);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(49, 16);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Shapes";
             // 
-            // PaintToolsStrip
+            // rectangleBtn
             // 
-            this.PaintToolsStrip.ImageScalingSize = new System.Drawing.Size(92, 92);
-            this.PaintToolsStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.LineButton,
-            this.CircleButton,
-            this.RectangleButton,
-            this.Seperator1,
-            this.ResizeButton,
-            this.ColorPickerButton,
-            this.RelocateButton});
-            this.PaintToolsStrip.Location = new System.Drawing.Point(0, 43);
-            this.PaintToolsStrip.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.PaintToolsStrip.Name = "PaintToolsStrip";
-            this.PaintToolsStrip.Padding = new System.Windows.Forms.Padding(0);
-            this.PaintToolsStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.PaintToolsStrip.Size = new System.Drawing.Size(898, 99);
-            this.PaintToolsStrip.TabIndex = 1;
-            this.PaintToolsStrip.Text = "Paint Tools";
+            this.rectangleBtn.BackColor = System.Drawing.Color.Transparent;
+            this.rectangleBtn.BackgroundImage = global::Paint.Properties.Resources.rectangle;
+            this.rectangleBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rectangleBtn.FlatAppearance.BorderSize = 0;
+            this.rectangleBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.rectangleBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.rectangleBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rectangleBtn.Location = new System.Drawing.Point(510, 17);
+            this.rectangleBtn.Name = "rectangleBtn";
+            this.rectangleBtn.Size = new System.Drawing.Size(32, 32);
+            this.rectangleBtn.TabIndex = 11;
+            this.rectangleBtn.UseVisualStyleBackColor = false;
+            this.rectangleBtn.MouseClick += new System.Windows.Forms.MouseEventHandler(this.rectangleBtn_MouseClick);
             // 
-            // LineButton
+            // circleBtn
             // 
-            this.LineButton.Checked = true;
-            this.LineButton.CheckOnClick = true;
-            this.LineButton.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.LineButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.LineButton.Image = ((System.Drawing.Image)(resources.GetObject("LineButton.Image")));
-            this.LineButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.LineButton.Name = "LineButton";
-            this.LineButton.Size = new System.Drawing.Size(96, 96);
-            this.LineButton.Text = "Line";
-            this.LineButton.ToolTipText = "Line";
+            this.circleBtn.BackColor = System.Drawing.Color.Transparent;
+            this.circleBtn.BackgroundImage = global::Paint.Properties.Resources.circle;
+            this.circleBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.circleBtn.FlatAppearance.BorderSize = 0;
+            this.circleBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.circleBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.circleBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.circleBtn.Location = new System.Drawing.Point(559, 17);
+            this.circleBtn.Name = "circleBtn";
+            this.circleBtn.Size = new System.Drawing.Size(32, 32);
+            this.circleBtn.TabIndex = 12;
+            this.circleBtn.UseVisualStyleBackColor = false;
+            this.circleBtn.MouseClick += new System.Windows.Forms.MouseEventHandler(this.circleBtn_MouseClick);
             // 
-            // CircleButton
+            // lineBtn
             // 
-            this.CircleButton.AccessibleName = "CircleButton";
-            this.CircleButton.CheckOnClick = true;
-            this.CircleButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.CircleButton.Image = ((System.Drawing.Image)(resources.GetObject("CircleButton.Image")));
-            this.CircleButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.CircleButton.Name = "CircleButton";
-            this.CircleButton.Size = new System.Drawing.Size(96, 96);
-            this.CircleButton.Text = "Circle";
-            this.CircleButton.ToolTipText = "Circle";
+            this.lineBtn.BackColor = System.Drawing.Color.Transparent;
+            this.lineBtn.BackgroundImage = global::Paint.Properties.Resources.line;
+            this.lineBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lineBtn.FlatAppearance.BorderSize = 0;
+            this.lineBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.lineBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.lineBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lineBtn.Location = new System.Drawing.Point(606, 17);
+            this.lineBtn.Name = "lineBtn";
+            this.lineBtn.Size = new System.Drawing.Size(32, 32);
+            this.lineBtn.TabIndex = 13;
+            this.lineBtn.UseVisualStyleBackColor = false;
+            this.lineBtn.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lineBtn_MouseClick);
             // 
-            // RectangleButton
+            // drawBtn
             // 
-            this.RectangleButton.CheckOnClick = true;
-            this.RectangleButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.RectangleButton.Image = ((System.Drawing.Image)(resources.GetObject("RectangleButton.Image")));
-            this.RectangleButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.RectangleButton.Name = "RectangleButton";
-            this.RectangleButton.Size = new System.Drawing.Size(96, 96);
-            this.RectangleButton.Text = "Rectangle";
-            this.RectangleButton.ToolTipText = "Rectangle";
+            this.drawBtn.BackColor = System.Drawing.Color.Transparent;
+            this.drawBtn.BackgroundImage = global::Paint.Properties.Resources.draw;
+            this.drawBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.drawBtn.FlatAppearance.BorderSize = 0;
+            this.drawBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.drawBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.drawBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.drawBtn.Location = new System.Drawing.Point(163, 17);
+            this.drawBtn.Name = "drawBtn";
+            this.drawBtn.Size = new System.Drawing.Size(32, 32);
+            this.drawBtn.TabIndex = 14;
+            this.drawBtn.UseVisualStyleBackColor = false;
+            this.drawBtn.MouseClick += new System.Windows.Forms.MouseEventHandler(this.drawBtn_MouseClick);
             // 
-            // Seperator1
+            // moveBtn
             // 
-            this.Seperator1.Margin = new System.Windows.Forms.Padding(16, 0, 16, 0);
-            this.Seperator1.Name = "Seperator1";
-            this.Seperator1.Size = new System.Drawing.Size(6, 99);
+            this.moveBtn.BackColor = System.Drawing.Color.Transparent;
+            this.moveBtn.BackgroundImage = global::Paint.Properties.Resources.move;
+            this.moveBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.moveBtn.FlatAppearance.BorderSize = 0;
+            this.moveBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.moveBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.moveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.moveBtn.Location = new System.Drawing.Point(207, 17);
+            this.moveBtn.Name = "moveBtn";
+            this.moveBtn.Size = new System.Drawing.Size(32, 32);
+            this.moveBtn.TabIndex = 15;
+            this.moveBtn.UseVisualStyleBackColor = false;
+            this.moveBtn.Click += new System.EventHandler(this.moveBtn_Click);
+            this.moveBtn.MouseClick += new System.Windows.Forms.MouseEventHandler(this.moveBtn_MouseClick);
             // 
-            // ResizeButton
+            // resizeBtn
             // 
-            this.ResizeButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.ResizeButton.Image = ((System.Drawing.Image)(resources.GetObject("ResizeButton.Image")));
-            this.ResizeButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ResizeButton.Name = "ResizeButton";
-            this.ResizeButton.Size = new System.Drawing.Size(96, 96);
-            this.ResizeButton.Text = "Resize";
-            this.ResizeButton.ToolTipText = "Resize";
+            this.resizeBtn.BackColor = System.Drawing.Color.Transparent;
+            this.resizeBtn.BackgroundImage = global::Paint.Properties.Resources.resize;
+            this.resizeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.resizeBtn.FlatAppearance.BorderSize = 0;
+            this.resizeBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.resizeBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.resizeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.resizeBtn.Location = new System.Drawing.Point(245, 17);
+            this.resizeBtn.Name = "resizeBtn";
+            this.resizeBtn.Size = new System.Drawing.Size(32, 32);
+            this.resizeBtn.TabIndex = 16;
+            this.resizeBtn.UseVisualStyleBackColor = false;
+            this.resizeBtn.MouseClick += new System.Windows.Forms.MouseEventHandler(this.resizeBtn_MouseClick);
             // 
-            // ColorPickerButton
+            // textBox
             // 
-            this.ColorPickerButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.ColorPickerButton.Image = ((System.Drawing.Image)(resources.GetObject("ColorPickerButton.Image")));
-            this.ColorPickerButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ColorPickerButton.Name = "ColorPickerButton";
-            this.ColorPickerButton.Size = new System.Drawing.Size(96, 96);
-            this.ColorPickerButton.Text = "ColorPicker";
-            this.ColorPickerButton.ToolTipText = "Color Picker";
+            this.textBox.AcceptsReturn = true;
+            this.textBox.AcceptsTab = true;
+            this.textBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.textBox.ForeColor = System.Drawing.Color.Teal;
+            this.textBox.Location = new System.Drawing.Point(131, 162);
+            this.textBox.Multiline = true;
+            this.textBox.Name = "textBox";
+            this.textBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox.Size = new System.Drawing.Size(1050, 23);
+            this.textBox.TabIndex = 17;
+            this.textBox.WordWrap = false;
             // 
-            // RelocateButton
+            // comboBox1
             // 
-            this.RelocateButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.RelocateButton.Image = ((System.Drawing.Image)(resources.GetObject("RelocateButton.Image")));
-            this.RelocateButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.RelocateButton.Name = "RelocateButton";
-            this.RelocateButton.Size = new System.Drawing.Size(96, 96);
-            this.RelocateButton.Text = "Relocate";
-            // 
-            // button1
-            // 
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Location = new System.Drawing.Point(900, 80);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Save";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(819, 80);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Import";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Solid",
+            "Dot",
+            "Dash"});
+            this.comboBox1.Location = new System.Drawing.Point(878, 267);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 23);
+            this.comboBox1.TabIndex = 18;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // Canvas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(898, 357);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.PaintToolsStrip);
-            this.Controls.Add(this.IOToolStrip);
+            this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.textBox);
+            this.Controls.Add(this.resizeBtn);
+            this.Controls.Add(this.moveBtn);
+            this.Controls.Add(this.drawBtn);
+            this.Controls.Add(this.lineBtn);
+            this.Controls.Add(this.circleBtn);
+            this.Controls.Add(this.rectangleBtn);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.openBtn);
+            this.Controls.Add(this.saveBtn);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.sourceBtn);
+            this.Controls.Add(this.designBtn);
+            this.Controls.Add(this.minimizeBtn);
+            this.Controls.Add(this.closeBtn);
             this.DoubleBuffered = true;
-            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "Canvas";
-            this.Text = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Paint";
             this.Load += new System.EventHandler(this.Canvas_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Canvas_Paint);
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Canvas_MouseClick);
+            this.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.Canvas_MouseDoubleClick);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Canvas_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Canvas_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Canvas_MouseUp);
-            this.IOToolStrip.ResumeLayout(false);
-            this.IOToolStrip.PerformLayout();
-            this.PaintToolsStrip.ResumeLayout(false);
-            this.PaintToolsStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -303,28 +378,25 @@ namespace Paint
 
         #endregion
 
-        private System.Windows.Forms.ToolStrip IOToolStrip;
-        private System.Windows.Forms.ToolStripButton newToolStripButton;
-        private System.Windows.Forms.ToolStripButton openToolStripButton;
-        private System.Windows.Forms.ToolStripButton saveToolStripButton;
-        private System.Windows.Forms.ToolStripButton printToolStripButton;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
-        private System.Windows.Forms.ToolStripButton cutToolStripButton;
-        private System.Windows.Forms.ToolStripButton copyToolStripButton;
-        private System.Windows.Forms.ToolStripButton pasteToolStripButton;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripButton helpToolStripButton;
-        private System.Windows.Forms.ToolStrip PaintToolsStrip;
-        private System.Windows.Forms.ToolStripButton CircleButton;
-        private System.Windows.Forms.ToolStripButton LineButton;
-        private System.Windows.Forms.ToolStripButton RectangleButton;
-        private System.Windows.Forms.ToolStripSeparator Seperator1;
-        private System.Windows.Forms.ToolStripButton ResizeButton;
-        private System.Windows.Forms.ColorDialog colorDialog1;
-        private System.Windows.Forms.ToolStripButton ColorPickerButton;
-        private System.Windows.Forms.ToolStripButton RelocateButton;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button closeBtn;
+        private System.Windows.Forms.Button minimizeBtn;
+        private System.Windows.Forms.Button designBtn;
+        private System.Windows.Forms.Button sourceBtn;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button saveBtn;
+        private System.Windows.Forms.Button openBtn;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button rectangleBtn;
+        private System.Windows.Forms.Button circleBtn;
+        private System.Windows.Forms.Button lineBtn;
+        private System.Windows.Forms.Button drawBtn;
+        private System.Windows.Forms.Button moveBtn;
+        private System.Windows.Forms.Button resizeBtn;
+        private System.Windows.Forms.TextBox textBox;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
 

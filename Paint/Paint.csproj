@@ -7,10 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="State\Parser\**" />
+    <Compile Remove="State\Tokenizer\**" />
+    <EmbeddedResource Remove="State\Parser\**" />
+    <EmbeddedResource Remove="State\Tokenizer\**" />
+    <None Remove="State\Parser\**" />
+    <None Remove="State\Tokenizer\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Parser\" />
     <Folder Include="Tokenizer\" />
-    <Folder Include="State\Parser\" />
-    <Folder Include="State\Tokenizer\" />
   </ItemGroup>
 
   <ItemGroup>
