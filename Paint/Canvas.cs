@@ -75,14 +75,30 @@ namespace Paint
         {
             foreach (var shape in state.Shapes)
             {
-                if (shape.OnAnchor(new(e.X, e.Y)) != AnchorDirection.None) { 
+                AnchorDirection dir = shape.OnAnchor(new(e.X, e.Y));
+                if (dir == AnchorDirection.North || dir == AnchorDirection.South) { 
+                    Cursor = Cursors.SizeNS;
+                    return;
+                }
+                else if (dir == AnchorDirection.East || dir == AnchorDirection.West)
+                {
+                    Cursor = Cursors.SizeWE;
+                    return;
+                }
+                else if (dir == AnchorDirection.NorthEast || dir == AnchorDirection.SouthWest)
+                {
                     Cursor = Cursors.SizeNESW;
+                    return;
+                }
+                else if (dir == AnchorDirection.NorthWest || dir == AnchorDirection.SouthEast)
+                {
+                    Cursor = Cursors.SizeNWSE;
                     return;
                 }
                 else if (shape.Contains(new(e.X, e.Y))) {
                     Cursor = shape.IsSelected ? Cursors.NoMove2D : Cursors.Hand;
                     return;
-                }
+                } 
             }
             Cursor = Cursors.Default;
         }

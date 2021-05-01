@@ -29,7 +29,7 @@ namespace Paint
         public DashStyle Style { get { return style; } set { style = value; } }
         public Color BorderColor { get { return borderColor; } set { borderColor = value; } }
         public float BorderThickness { get { return borderThickness; } set { borderThickness = value; } }
-        public DashStyle BorderStyle { get { return BorderStyle; } set { BorderStyle = value; } }
+        public DashStyle BorderStyle { get { return borderStyle; } set { borderStyle = value; } }
         public int BorderOffset { get { return borderOffset; } set { borderOffset = value * 2; } }
         public Color AnchorColor { get { return anchorColor; } set { anchorColor = value; } }
         public int AnchorSize { get { return anchorSize; } set { anchorSize = value * 2; } }
