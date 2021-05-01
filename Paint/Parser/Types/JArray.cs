@@ -1,12 +1,13 @@
 /*
- * Tuwaiq .NET Bootcamp
+ * Tuwaiq .NET Bootcamp | Paint
  * 
- * Authors
+ * Team Members
  * 
- *  Younes Alturkey
- *  Abdulrahman Bin Maneea
- *  Abdullah Albagshi
- *  Ibrahim Alobaysi
+ * Abdulrahman Bin Maneea
+ * Younes Alturkey
+ * Anas Alhmoud
+ * Faisal Alsagri
+ * 
  */
 using System.Collections.Generic;
 using System;using Paint.Tokenizer;
@@ -25,6 +26,7 @@ namespace Paint.Parser
 				return sum;
 			}
 		}
+		public int Count { get { return Items.Count; } }
 
 		public List<Value> Items = new List<Value>();
 		public override string ToString()

@@ -15,13 +15,14 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using Paint.Shapes;
+using Paint.Utils;
 
 namespace Paint.State
 {
     class AppState
     {
         const string FILE_NAME = "Untitled.drw";
-        const int MAGIC_NUMBER = 0;
+        const int MAGIC_NUMBER = 0x7fffffff;
 
         private Settings settings;
         private List<Shape> shapes;
@@ -78,6 +79,11 @@ namespace Paint.State
                     // Add Parser
                     // return new shapes
                     string stringOfShapes = reader.ReadString();
+                    ParserUtils.intParser(stringOfShapes);
+                    for (int i = 0; i < ParserUtils.parserCount(); i++)
+                    {
+                        AddShape(ParserUtils.getShape(stringOfShapes, i));
+                    }
                     Debug.WriteLine(stringOfShapes);
 
                     /* OUTPUT STRING

@@ -1,14 +1,16 @@
 /*
- * Tuwaiq .NET Bootcamp
+ * Tuwaiq .NET Bootcamp | Paint
  * 
- * Authors
+ * Team Members
  * 
- *  Younes Alturkey
- *  Abdulrahman Bin Maneea
- *  Abdullah Albagshi
- *  Ibrahim Alobaysi
+ * Abdulrahman Bin Maneea
+ * Younes Alturkey
+ * Anas Alhmoud
+ * Faisal Alsagri
+ * 
  */
-using System;using Paint.Tokenizer;
+using System;
+using Paint.Tokenizer;
 
 namespace Paint.Parser
 {

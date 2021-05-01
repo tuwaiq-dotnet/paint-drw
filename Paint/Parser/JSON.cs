@@ -1,11 +1,13 @@
 /*
- * Tuwaiq .NET Bootcamp | JSON Parser
+ * Tuwaiq .NET Bootcamp | Paint
  * 
  * Team Members
- * Abdulrahman Bin Maneea (Team Lead)
+ * 
+ * Abdulrahman Bin Maneea
  * Younes Alturkey
- * Abdullah Albagshi
- * Ibrahim Alobaysi
+ * Anas Alhmoud
+ * Faisal Alsagri
+ * 
  */
 using System;
 using Paint.Tokenizer;
