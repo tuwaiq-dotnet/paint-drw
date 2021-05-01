@@ -378,8 +378,6 @@ namespace Paint
             this.Text = "Paint";
             this.Load += new System.EventHandler(this.Canvas_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Canvas_Paint);
-            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Canvas_MouseClick);
-            this.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.Canvas_MouseDoubleClick);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Canvas_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Canvas_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Canvas_MouseUp);
