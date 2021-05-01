@@ -57,7 +57,7 @@ namespace Paint.Shapes
                 End = end;
         }
         public void Resize(int width, int height) { Resize(Start, new(Start.X + width, Start.Y + height)); }
-        public void Resize(AnchorDirection direction, Point p)
+        public virtual void Resize(AnchorDirection direction, Point p)
         {
             switch (direction)
             {
