@@ -29,16 +29,16 @@ namespace Paint.Shapes
 
         public Shape()
         {
-            Color = DefaultSettings.Color;
-            Thickness = DefaultSettings.Thickness;
-            Style = DefaultSettings.Style;
+            Color = Settings.GetInstance().Color;
+            Thickness = Settings.GetInstance().Thickness;
+            Style = Settings.GetInstance().Style;
         }
 
         public Shape(int anchorsCount)
         {
-            Color = DefaultSettings.Color;
-            Thickness = DefaultSettings.Thickness;
-            Style = DefaultSettings.Style;
+            Color = Settings.GetInstance().Color;
+            Thickness = Settings.GetInstance().Thickness;
+            Style = Settings.GetInstance().Style;
             anchors = new(anchorsCount);
         }
 
@@ -109,13 +109,13 @@ namespace Paint.Shapes
         public AnchorDirection OnAnchor(Point p) { return anchors.OnAnchor(p); }
         protected void DrawBorder(Graphics g)
         {
-            Pen p = new(DefaultSettings.BorderColor, DefaultSettings.BorderThickness);
-            p.DashStyle = DefaultSettings.BorderStyle;
+            Pen p = new(Settings.GetInstance().BorderColor, Settings.GetInstance().BorderThickness);
+            p.DashStyle = Settings.GetInstance().BorderStyle;
             g.DrawRectangle(p,
-                Start.X - DefaultSettings.BorderOffset,
-                Start.Y - DefaultSettings.BorderOffset,
-                Width + DefaultSettings.BorderOffset * 2,
-                Height + DefaultSettings.BorderOffset * 2);
+                Start.X - Settings.GetInstance().BorderOffset,
+                Start.Y - Settings.GetInstance().BorderOffset,
+                Width + Settings.GetInstance().BorderOffset * 2,
+                Height + Settings.GetInstance().BorderOffset * 2);
             anchors.Draw(Start, End, g);
         }
         public abstract void Draw(Graphics g);

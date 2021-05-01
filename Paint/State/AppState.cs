@@ -23,59 +23,24 @@ namespace Paint.State
         const string FILE_NAME = "Untitled.drw";
         const int MAGIC_NUMBER = 0;
 
-        private DefaultSettings settings;
+        private Settings settings;
         private List<Shape> shapes;
         private Shape currentShape;
         private int shapesCount;
         private ShapeType selectedShape;
 
-        public List<Shape> Shapes
-        {
-            get { return shapes; }
-        }
-
-        public DefaultSettings Settings
-        {
-            get { return settings; }
-        }
-
-        public Shape CurrentShape
-        {
-            get { return currentShape; }
-        }
-
-        public ShapeType SelectedShape
-        {
-            get { return selectedShape; }
-        }
-
-        public int ShapesCount
-        {
-            get { return shapesCount; }
-        }
-
+        public List<Shape> Shapes { get { return shapes; } }
+        public Settings Settings { get { return settings; } }
+        public Shape CurrentShape { get { return currentShape; } set { currentShape = value; } }
+        public ShapeType SelectedShape { get { return selectedShape; } set { selectedShape = value; } }
+        public int ShapesCount { get { return shapesCount; } }
         public AppState()
         {
             shapes = new List<Shape>();
-            settings = new DefaultSettings();
+            settings = Settings.GetInstance();
             currentShape = null;
             shapesCount = 0;
             selectedShape = ShapeType.Line;
-        }
-
-        public void ClearCurrentShape()
-        {
-            this.currentShape = null;
-        }
-
-        public void SetCurrentShape(Shape currentShape)
-        {
-            this.currentShape = currentShape;
-        }
-
-        public void SetSelectedShape(ShapeType selectedShape)
-        {
-            this.selectedShape = selectedShape;
         }
 
         public void AddShape(Shape shape)

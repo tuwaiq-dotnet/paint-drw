@@ -49,22 +49,23 @@ namespace Paint.Shapes
         }
         private void Update2Anchors(Point start, Point end)
         {
-            int d = DefaultSettings.AnchorSize / 2;
-            anchors[(int)AnchorDirection.Start] = new Rectangle(start.X - d, start.Y - d, start.X + d, start.Y + d);
-            anchors[(int)AnchorDirection.End] = new Rectangle(end.X - d, end.Y - d, end.X + d, end.Y + d);
+            int AS = Settings.GetInstance().AnchorSize;
+            int HAS = Settings.GetInstance().AnchorSize / 2;
+            anchors[(int)AnchorDirection.Start] = new Rectangle(start.X - HAS, start.Y - HAS, AS, AS);
+            anchors[(int)AnchorDirection.End] = new Rectangle(end.X - HAS, end.Y - HAS, AS, AS);
         }
         private void Update8Anchors(Point S, Point E)
         {
-            int BO = DefaultSettings.BorderOffset;
-            int AS = DefaultSettings.AnchorSize; 
-            int HAS = DefaultSettings.AnchorSize / 2; // Half-Anchor Size
+            int BO = Settings.GetInstance().BorderOffset;
+            int AS = Settings.GetInstance().AnchorSize;
+            int HAS = Settings.GetInstance().AnchorSize / 2; // Half-Anchor Size
             anchors[(int)AnchorDirection.North] = new Rectangle(S.X + (E.X - S.X) / 2 - HAS, S.Y - HAS - BO, AS, AS);
             anchors[(int)AnchorDirection.NorthEast] = new Rectangle(E.X - HAS + BO, S.Y - HAS - BO, AS, AS);
             anchors[(int)AnchorDirection.East] = new Rectangle(E.X - HAS + BO, S.Y + (E.Y - S.Y) / 2 - HAS, AS, AS);
             anchors[(int)AnchorDirection.SouthEast] = new Rectangle(E.X - HAS + BO, E.Y - HAS + BO, AS, AS);
             anchors[(int)AnchorDirection.South] = new Rectangle(S.X + (E.X - S.X) / 2 - HAS, E.Y - HAS + BO, AS, AS);
             anchors[(int)AnchorDirection.SouthWest] = new Rectangle(S.X - HAS - BO, E.Y - HAS + BO, AS, AS);
-            anchors[(int)AnchorDirection.West] = new Rectangle(S.X - HAS - BO, S.Y + (E.Y - S.Y) / 2 - HAS, AS,AS);
+            anchors[(int)AnchorDirection.West] = new Rectangle(S.X - HAS - BO, S.Y + (E.Y - S.Y) / 2 - HAS, AS, AS);
             anchors[(int)AnchorDirection.NorthWest] = new Rectangle(S.X - HAS - BO, S.Y - HAS - BO, AS, AS);
         }
     }

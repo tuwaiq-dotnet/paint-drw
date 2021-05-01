@@ -19,8 +19,7 @@ namespace Paint.Shapes
         }
         public override void Draw(Graphics g)
         {
-            if (isSelected)
-                ;
+            if (isSelected) anchors.Draw(Start, End, g);
                 // Show the two dots that allow for a resize, and possibly increase the
                 // thickness while selected (may need to override Select and Unselect for this to happen)
                 //g.DrawRectangle(borderPen, Start.X - borderOffset, Start.Y - borderOffset, Width + borderOffset * 2, Height + borderOffset * 2);
