@@ -32,6 +32,7 @@ namespace Paint
             InitializeComponent();
 
             // use uiUtils NOT state!!
+            state.SelectedTool = Tools.Selector;
         }
 
         private void Canvas_Load(object sender, EventArgs e)
@@ -47,12 +48,13 @@ namespace Paint
 
         private void Canvas_Paint(object sender, PaintEventArgs e)
         {
-            if(isSourceView)
+            if (isSourceView)
             {
                 textBox.Visible = true;
                 textBox.Text = state.StringifyShapes();
                 textBox.Height = 300;
-            } else
+            }
+            else
             {
                 foreach (var shape in state.Shapes)
                     shape.Draw(e.Graphics);
@@ -66,7 +68,7 @@ namespace Paint
 
         private void Canvas_MouseClick(object sender, MouseEventArgs e)
         {
-            
+
             foreach (var shape in state.Shapes)
                 shape.Unselect();
             foreach (var shape in state.Shapes)
@@ -78,7 +80,7 @@ namespace Paint
                     Invalidate();
                     return;
                 }
-            
+
         }
 
         private void Canvas_MouseMove(object sender, MouseEventArgs e)
@@ -145,13 +147,15 @@ namespace Paint
             }
 
             // Select
-            if (uiUtils.selectShape(e.X, e.Y)) {
+            if (uiUtils.selectShape(e.X, e.Y))
+            {
                 Invalidate();
                 comboBox1.Enabled = true;
 
                 return;
-                
-            } else
+
+            }
+            else
             {
                 // disable all style controls
                 comboBox1.Enabled = false;
@@ -165,7 +169,7 @@ namespace Paint
                 uiUtils.resetDelta();
             }
 
-            if(uiUtils.currentDrawingShape != null)
+            if (uiUtils.currentDrawingShape != null)
             {
                 uiUtils.setAndClearCurrentShape(e.X, e.Y);
             }
@@ -332,9 +336,9 @@ namespace Paint
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(uiUtils.selectedShape != null)
+            if (uiUtils.selectedShape != null)
             {
-                if(comboBox1.SelectedIndex == 0)
+                if (comboBox1.SelectedIndex == 0)
                 {
                     uiUtils.selectedShape.Style = System.Drawing.Drawing2D.DashStyle.Solid;
                 }

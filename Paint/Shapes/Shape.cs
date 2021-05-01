@@ -18,8 +18,8 @@ namespace Paint.Shapes
 
         public Point Start { set { start = value; } get { return start; } }
         public Point End { set { end = value; } get { return end; } }
-        public int Width { get { return End.X - Start.X; } }
-        public int Height { get { return End.Y - Start.Y; } }
+        public int Width { get { return Math.Abs(End.X - Start.X); } }
+        public int Height { get { return Math.Abs(End.Y - Start.Y); } }
         public bool IsSelected { get { return isSelected; } }
         public ShapeType Type { get { return type; } }
         public bool IsFilled { get { return isFilled; } }
@@ -53,16 +53,16 @@ namespace Paint.Shapes
         public void Move(int x, int y, int xDelta, int yDelta) { Move(new(x - xDelta, y - yDelta)); }
         public void Resize(Point start, Point end)
         {
-            Start = start;
-            End = end;
+                Start = start;
+                End = end;
         }
         public void Resize(int width, int height) { Resize(Start, new(Start.X + width, Start.Y + height)); }
-        public void Resize(AnchorDirection direction, Point p)
+        public virtual void Resize(AnchorDirection direction, Point p)
         {
             switch (direction)
             {
                 case AnchorDirection.North:
-                    Start = new(Start.X, Start.Y + (p.Y - Start.Y));
+                    Start = new Point(Start.X, Start.Y + (p.Y - Start.Y));
                     break;
                 case AnchorDirection.NorthEast:
                     Start = new(Start.X, Start.Y + (p.Y - Start.Y));
@@ -91,7 +91,6 @@ namespace Paint.Shapes
                     return;
             }
         }
-
         public void Select() { isSelected = true; }
         public void Fill() { isFilled = true; }
         public void Unselect() { isSelected = false; }
@@ -100,25 +99,32 @@ namespace Paint.Shapes
         public bool Contains(int x, int y)
         {
             return
-               x >= Start.X &&
-               x <= End.X &&
-               y >= Start.Y &&
-               y <= End.Y;
+               x >= Math.Min(Start.X, End.X) &&
+               x <= Math.Min(Start.X, End.X) + Width &&
+               y >= Math.Min(Start.Y, End.Y) &&
+               y <= Math.Min(Start.Y, End.Y) + Height;
 
         }
-        public AnchorDirection OnAnchor(Point p) { return anchors.OnAnchor(p); }
+        public AnchorDirection OnAnchor(Point p) { return anchors.OnAnchor(p); }        
         protected void DrawBorder(Graphics g)
         {
             Pen p = new(Settings.GetInstance().BorderColor, Settings.GetInstance().BorderThickness);
             p.DashStyle = Settings.GetInstance().BorderStyle;
             g.DrawRectangle(p,
-                Start.X - Settings.GetInstance().BorderOffset,
-                Start.Y - Settings.GetInstance().BorderOffset,
+                (Start.X > End.X ? End.X : Start.X) - Settings.GetInstance().BorderOffset,
+                (Start.Y > End.Y ? End.Y : Start.Y) - Settings.GetInstance().BorderOffset,
                 Width + Settings.GetInstance().BorderOffset * 2,
                 Height + Settings.GetInstance().BorderOffset * 2);
-            anchors.Draw(Start, End, g);
+
+
+            Point start = new(Math.Min(Start.X, End.X), Math.Min(Start.Y, End.Y));
+            Point end = new(Math.Max(Start.X, End.X), Math.Max(Start.Y, End.Y));
+            anchors.Draw(start, end, g);
         }
+        
         public abstract void Draw(Graphics g);
+
+
     }
 
     public enum ShapeType

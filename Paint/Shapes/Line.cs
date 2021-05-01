@@ -27,5 +27,18 @@ namespace Paint.Shapes
                 p.DashStyle = Style;
                 g.DrawLine(p, Start, End);
         }
+
+        public override void Resize(AnchorDirection direction, Point p)
+        {
+            switch (direction)
+            {
+                case AnchorDirection.North:
+                    Start = new Point(p.X, p.Y);
+                    break;
+                case AnchorDirection.End:
+                    End = new(p.X, p.Y);
+                    break;
+            }
+        }
     }
 }
