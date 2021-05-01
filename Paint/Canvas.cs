@@ -31,10 +31,10 @@ namespace Paint
         private void Canvas_Load(object sender, EventArgs e)
         {
             // For Faisal to Generate String of Shapes
-            /*state.AddShape(new Circle(new Point(200, 300), new Point(400, 500)));
+            state.AddShape(new Circle(new Point(200, 300), new Point(400, 500)));
             state.AddShape(new Rectan(new Point(500, 400), new Point(700, 900)));
             state.AddShape(new Circle(new Point(1200, 1300), new Point(1500, 1700)));
-            state.AddShape(new Line(new Point(500, 300), new Point(1000, 1000)));*/
+            state.AddShape(new Line(new Point(500, 300), new Point(1000, 1000)));
 
         }
 
