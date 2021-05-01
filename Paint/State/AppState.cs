@@ -20,6 +20,7 @@ namespace Paint.State
 {
     class AppState
     {
+        private static AppState _instance;
         const string FILE_NAME = "Untitled.drw";
         const int MAGIC_NUMBER = 0;
 
@@ -27,20 +28,26 @@ namespace Paint.State
         private List<Shape> shapes;
         private Shape currentShape;
         private int shapesCount;
-        private ShapeType selectedShape;
+        private Tools selectedTool;
 
         public List<Shape> Shapes { get { return shapes; } }
         public Settings Settings { get { return settings; } }
         public Shape CurrentShape { get { return currentShape; } set { currentShape = value; } }
-        public ShapeType SelectedShape { get { return selectedShape; } set { selectedShape = value; } }
+        public Tools SelectedTool { get { return selectedTool; } set { selectedTool = value; } }
         public int ShapesCount { get { return shapesCount; } }
-        public AppState()
+        private AppState()
         {
             shapes = new List<Shape>();
             settings = Settings.GetInstance();
             currentShape = null;
             shapesCount = 0;
-            selectedShape = ShapeType.Line;
+            selectedTool = Tools.Line;
+        }
+
+        public static AppState GetInstance()
+        {
+            if (_instance == null) _instance = new();
+            return _instance;
         }
 
         public void AddShape(Shape shape)
@@ -125,6 +132,13 @@ namespace Paint.State
         // Add all Shapes classes implementation here
         // update shapes from here
         // add any method you need like GetCurrentShape() or setCurrentShape();
+    }
+    public enum Tools
+    {
+        Circle,
+        Rectangle,
+        Line,
+        Selector
     }
 }
 

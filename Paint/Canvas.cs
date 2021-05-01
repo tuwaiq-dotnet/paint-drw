@@ -17,15 +17,21 @@ using System.Windows.Forms;
 using Paint.State;
 using System.Diagnostics;
 
+using Paint.Utils;
+
 namespace Paint
 {
     public partial class Canvas : Form
     {
-        AppState state = new AppState();
+        UIUtils uiUtils = UIUtils.GetInstance();
+        AppState state = AppState.GetInstance();
 
         public Canvas()
         {
             InitializeComponent();
+
+            // use uiUtils NOT state!!
+            state.SelectedTool = Tools.Rectangle;
         }
 
         private void Canvas_Load(object sender, EventArgs e)
@@ -42,6 +48,11 @@ namespace Paint
         {
             foreach (var shape in state.Shapes)
                 shape.Draw(e.Graphics);
+
+            if(uiUtils.currentDrawingShape != null)
+            {
+                uiUtils.currentDrawingShape.Draw(e.Graphics);
+            }
         }
 
         //Save Button
@@ -58,6 +69,7 @@ namespace Paint
 
         private void Canvas_MouseClick(object sender, MouseEventArgs e)
         {
+            /*
             foreach (var shape in state.Shapes)
                 shape.Unselect();
             foreach (var shape in state.Shapes)
@@ -69,38 +81,94 @@ namespace Paint
                     Invalidate();
                     return;
                 }
+            */
         }
 
         private void Canvas_MouseMove(object sender, MouseEventArgs e)
         {
-            foreach (var shape in state.Shapes)
+            Cursor = uiUtils.GetCursor(e.X, e.Y);
+
+            if (uiUtils.isHolding)
             {
-                AnchorDirection dir = shape.OnAnchor(new(e.X, e.Y));
-                if (dir == AnchorDirection.North || dir == AnchorDirection.South) { 
-                    Cursor = Cursors.SizeNS;
-                    return;
-                }
-                else if (dir == AnchorDirection.East || dir == AnchorDirection.West)
+                if (uiUtils.selectedShape != null)
                 {
-                    Cursor = Cursors.SizeWE;
-                    return;
+                    if (uiUtils.selectedAnchor != AnchorDirection.None)
+                    {
+                        uiUtils.selectedShape.Resize(uiUtils.selectedAnchor, new(e.X, e.Y));
+                    }
+                    else
+                    {
+                        uiUtils.selectedShape.Move(e.X, e.Y, uiUtils.deltaX, uiUtils.deltaY);
+                    }
+                    Invalidate();
                 }
-                else if (dir == AnchorDirection.NorthEast || dir == AnchorDirection.SouthWest)
+                else if (uiUtils.currentDrawingShape != null)
                 {
-                    Cursor = Cursors.SizeNESW;
-                    return;
+                    uiUtils.setCurrentDrawingShapeX2Y2(e.X, e.Y);
+                    Invalidate();
                 }
-                else if (dir == AnchorDirection.NorthWest || dir == AnchorDirection.SouthEast)
-                {
-                    Cursor = Cursors.SizeNWSE;
-                    return;
-                }
-                else if (shape.Contains(new(e.X, e.Y))) {
-                    Cursor = shape.IsSelected ? Cursors.NoMove2D : Cursors.Hand;
-                    return;
-                } 
+
             }
-            Cursor = Cursors.Default;
+
+        }
+
+        private void Canvas_MouseDown(object sender, MouseEventArgs e)
+        {
+
+            uiUtils.isHolding = true;
+
+            // Draw
+            switch (state.SelectedTool)
+            {
+                case Tools.Line:
+                    uiUtils.currentDrawingShape = new Line();
+                    uiUtils.setCurrentDrawingShapeX1Y1(e.X, e.Y);
+                    return;
+                case Tools.Circle:
+                    uiUtils.currentDrawingShape = new Circle();
+                    uiUtils.setCurrentDrawingShapeX1Y1(e.X, e.Y);
+                    return;
+                case Tools.Rectangle:
+                    uiUtils.currentDrawingShape = new Rectan();
+                    uiUtils.setCurrentDrawingShapeX1Y1(e.X, e.Y);
+                    return;
+            }
+
+            // resize
+            if (uiUtils.selectedShape != null)
+            {
+                var anchor = uiUtils.selectedShape.OnAnchor(new(e.X, e.Y));
+                if (anchor != AnchorDirection.None)
+                {
+                    uiUtils.selectedAnchor = anchor;
+                    return;
+                }
+
+                uiUtils.resetSelection();
+                Invalidate();
+            }
+
+            // Select
+            if (uiUtils.selectShape(e.X, e.Y)) {
+                Invalidate();
+                return;
+            }
+        }
+
+        private void Canvas_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (uiUtils.selectedShape != null)
+            {
+                uiUtils.resetDelta();
+            }
+
+            if(uiUtils.currentDrawingShape != null)
+            {
+                uiUtils.setAndClearCurrentShape(e.X, e.Y);
+            }
+
+            uiUtils.isHolding = false;
+
         }
     }
 }
