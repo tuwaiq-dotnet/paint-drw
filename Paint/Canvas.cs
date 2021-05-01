@@ -42,6 +42,7 @@ namespace Paint
             //Set application to fixed Width and Height
             Width = 1280;
             Height = 720;
+            state.SelectedTool = Tools.Circle;
             //Hide source text box
             textBox.Visible = false;
         }
@@ -64,23 +65,6 @@ namespace Paint
                     uiUtils.currentDrawingShape.Draw(e.Graphics);
                 }
             }
-        }
-
-        private void Canvas_MouseClick(object sender, MouseEventArgs e)
-        {
-
-            foreach (var shape in state.Shapes)
-                shape.Unselect();
-            foreach (var shape in state.Shapes)
-                if (shape.Contains(e.X, e.Y))
-                {
-                    shape.Select();
-                    state.Shapes.Remove(shape);
-                    state.Shapes.Add(shape);
-                    Invalidate();
-                    return;
-                }
-
         }
 
         private void Canvas_MouseMove(object sender, MouseEventArgs e)
@@ -232,25 +216,11 @@ namespace Paint
             openBtn.BackgroundImage = new Bitmap(Properties.Resources.open);
         }
 
-        public const int WM_NCLBUTTONDOWN = 0xA1;
-        public const int HT_CAPTION = 0x2;
-
-        [System.Runtime.InteropServices.DllImport("user32.dll")]
-        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
-        [System.Runtime.InteropServices.DllImport("user32.dll")]
-        public static extern bool ReleaseCapture();
-
-        private void Canvas_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                ReleaseCapture();
-                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
-            }
-        }
 
         private void rectangleBtn_MouseClick(object sender, MouseEventArgs e)
         {
+            uiUtils.resetSelection();
+
             state.SelectedTool = Tools.Rectangle;
             rectangleBtn.BackgroundImage = new Bitmap(Properties.Resources.rectangle_active);
             circleBtn.BackgroundImage = new Bitmap(Properties.Resources.circle);
@@ -259,6 +229,9 @@ namespace Paint
 
         private void circleBtn_MouseClick(object sender, MouseEventArgs e)
         {
+            uiUtils.resetSelection();
+
+
             state.SelectedTool = Tools.Circle;
             rectangleBtn.BackgroundImage = new Bitmap(Properties.Resources.rectangle);
             circleBtn.BackgroundImage = new Bitmap(Properties.Resources.circle_active);
@@ -267,6 +240,9 @@ namespace Paint
 
         private void lineBtn_MouseClick(object sender, MouseEventArgs e)
         {
+            uiUtils.resetSelection();
+
+
             state.SelectedTool = Tools.Line;
             rectangleBtn.BackgroundImage = new Bitmap(Properties.Resources.rectangle);
             circleBtn.BackgroundImage = new Bitmap(Properties.Resources.circle);

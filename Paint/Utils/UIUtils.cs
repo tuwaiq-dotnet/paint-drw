@@ -28,7 +28,7 @@ namespace Paint.Utils
 
         public void resetSelection()
         {
-            selectedShape.Unselect();
+            selectedShape?.Unselect();
             selectedAnchor = AnchorDirection.None;
             selectedShape = null;
             resetDelta();
@@ -40,6 +40,7 @@ namespace Paint.Utils
             deltaY = 0;
         }
         public bool selectShape(int x, int y) {
+
             foreach (var shape in state.Shapes)
             {
                 if (shape.Contains(new(x, y)))
