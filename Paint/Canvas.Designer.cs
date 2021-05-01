@@ -54,6 +54,7 @@ namespace Paint
             // 
             this.closeBtn.BackColor = System.Drawing.Color.Transparent;
             this.closeBtn.BackgroundImage = global::Paint.Properties.Resources.close;
+            this.closeBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.closeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.closeBtn.FlatAppearance.BorderSize = 0;
             this.closeBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
@@ -72,6 +73,7 @@ namespace Paint
             // 
             this.minimizeBtn.BackColor = System.Drawing.Color.Transparent;
             this.minimizeBtn.BackgroundImage = global::Paint.Properties.Resources.minimize;
+            this.minimizeBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.minimizeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.minimizeBtn.FlatAppearance.BorderSize = 0;
             this.minimizeBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
@@ -90,6 +92,7 @@ namespace Paint
             // 
             this.designBtn.BackColor = System.Drawing.Color.Transparent;
             this.designBtn.BackgroundImage = global::Paint.Properties.Resources.design_active;
+            this.designBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.designBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.designBtn.FlatAppearance.BorderSize = 0;
             this.designBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
@@ -106,6 +109,7 @@ namespace Paint
             // 
             this.sourceBtn.BackColor = System.Drawing.Color.Transparent;
             this.sourceBtn.BackgroundImage = global::Paint.Properties.Resources.source_inactive;
+            this.sourceBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.sourceBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.sourceBtn.FlatAppearance.BorderSize = 0;
             this.sourceBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
@@ -133,6 +137,7 @@ namespace Paint
             // 
             this.saveBtn.BackColor = System.Drawing.Color.Transparent;
             this.saveBtn.BackgroundImage = global::Paint.Properties.Resources.save;
+            this.saveBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.saveBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.saveBtn.FlatAppearance.BorderSize = 0;
             this.saveBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
@@ -151,6 +156,7 @@ namespace Paint
             // 
             this.openBtn.BackColor = System.Drawing.Color.Transparent;
             this.openBtn.BackgroundImage = global::Paint.Properties.Resources.open;
+            this.openBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.openBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.openBtn.FlatAppearance.BorderSize = 0;
             this.openBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
@@ -213,6 +219,7 @@ namespace Paint
             // 
             this.rectangleBtn.BackColor = System.Drawing.Color.Transparent;
             this.rectangleBtn.BackgroundImage = global::Paint.Properties.Resources.rectangle;
+            this.rectangleBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.rectangleBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.rectangleBtn.FlatAppearance.BorderSize = 0;
             this.rectangleBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
@@ -229,6 +236,7 @@ namespace Paint
             // 
             this.circleBtn.BackColor = System.Drawing.Color.Transparent;
             this.circleBtn.BackgroundImage = global::Paint.Properties.Resources.circle;
+            this.circleBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.circleBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.circleBtn.FlatAppearance.BorderSize = 0;
             this.circleBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
@@ -245,6 +253,7 @@ namespace Paint
             // 
             this.lineBtn.BackColor = System.Drawing.Color.Transparent;
             this.lineBtn.BackgroundImage = global::Paint.Properties.Resources.line;
+            this.lineBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.lineBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lineBtn.FlatAppearance.BorderSize = 0;
             this.lineBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
@@ -261,6 +270,7 @@ namespace Paint
             // 
             this.drawBtn.BackColor = System.Drawing.Color.Transparent;
             this.drawBtn.BackgroundImage = global::Paint.Properties.Resources.draw;
+            this.drawBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.drawBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.drawBtn.FlatAppearance.BorderSize = 0;
             this.drawBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
@@ -277,6 +287,7 @@ namespace Paint
             // 
             this.moveBtn.BackColor = System.Drawing.Color.Transparent;
             this.moveBtn.BackgroundImage = global::Paint.Properties.Resources.move;
+            this.moveBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.moveBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.moveBtn.FlatAppearance.BorderSize = 0;
             this.moveBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
@@ -294,6 +305,7 @@ namespace Paint
             // 
             this.resizeBtn.BackColor = System.Drawing.Color.Transparent;
             this.resizeBtn.BackgroundImage = global::Paint.Properties.Resources.resize;
+            this.resizeBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.resizeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.resizeBtn.FlatAppearance.BorderSize = 0;
             this.resizeBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;

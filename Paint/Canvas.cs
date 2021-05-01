@@ -40,10 +40,13 @@ namespace Paint
             //Remove native title bar and control
             FormBorderStyle = FormBorderStyle.None;
             //Set application to fixed Width and Height
-            Width = 1280;
-            Height = 720;
+            //Width = 1280;
+            //Height = 720;
             //Hide source text box
             textBox.Visible = false;
+            openBtn.BackgroundImageLayout = ImageLayout.Center;
+            moveBtn.BackgroundImageLayout = ImageLayout.Center;
+            resizeBtn.BackgroundImageLayout = ImageLayout.Center;
         }
 
         private void Canvas_Paint(object sender, PaintEventArgs e)
