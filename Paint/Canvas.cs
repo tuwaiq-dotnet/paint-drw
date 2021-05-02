@@ -64,6 +64,10 @@ namespace Paint
 
                 textBox.Text = state.StringifyShapes();
             }
+
+            //Maintaining style
+            designBtn.FlatAppearance.MouseOverBackColor = designBtn.BackColor;
+            sourceBtn.FlatAppearance.MouseOverBackColor = sourceBtn.BackColor;
         }
 
         private void Canvas_MouseMove(object sender, MouseEventArgs e)
@@ -174,24 +178,30 @@ namespace Paint
 
         private void saveBtn_MouseHover(object sender, EventArgs e)
         {
-            saveBtn.BackgroundImage = new Bitmap(Properties.Resources.save_btn_hover);
-
+            saveBtn.BackColor = Color.Teal;
+            saveBtn.FlatAppearance.MouseOverBackColor = saveBtn.BackColor;
+            saveBtn.ForeColor = Color.White;
         }
 
         private void saveBtn_MouseLeave(object sender, EventArgs e)
         {
-            saveBtn.BackgroundImage = new Bitmap(Properties.Resources.save_btn);
-
+            saveBtn.BackColor = Color.White;
+            saveBtn.FlatAppearance.BorderColor = Color.Teal;
+            saveBtn.ForeColor = Color.Teal;
         }
 
         private void openBtn_MouseHover(object sender, EventArgs e)
         {
-            openBtn.BackgroundImage = new Bitmap(Properties.Resources.open_btn_hover);
+            openBtn.BackColor = Color.Teal;
+            openBtn.ForeColor = Color.White;
+            openBtn.FlatAppearance.MouseOverBackColor = openBtn.BackColor;
         }
 
         private void openBtn_MouseLeave(object sender, EventArgs e)
         {
-            openBtn.BackgroundImage = new Bitmap(Properties.Resources.open_btn);
+            openBtn.BackColor = Color.White;
+            openBtn.FlatAppearance.BorderColor = Color.Teal;
+            openBtn.ForeColor = Color.Teal;
         }
 
 
@@ -256,20 +266,18 @@ namespace Paint
             this.Invalidate();
         }
 
-        private void designBtn_Click(object sender, EventArgs e)
-        {
-            designBtn.BackgroundImage = new Bitmap(Properties.Resources.design_active);
-            sourceBtn.BackgroundImage = new Bitmap(Properties.Resources.source_inactive);
-            isSourceView = false;
-
-        }
-
         private void designBtn_MouseClick(object sender, MouseEventArgs e)
         {
-            designBtn.BackgroundImage = new Bitmap(Properties.Resources.design_active);
-            sourceBtn.BackgroundImage = new Bitmap(Properties.Resources.source_inactive);
-            if(textBox.Text.Length > 2)
+            sourceBtn.BackColor = Color.White;
+            sourceBtn.FlatAppearance.BorderColor = Color.Teal;
+            sourceBtn.ForeColor = Color.Teal;
+            designBtn.BackColor = Color.Teal;
+            designBtn.ForeColor = Color.White;
+
+            if (textBox.Text.Length > 2)
                 state.Recompile(textBox.Text);
+            else
+                state.Clear();
             isSourceView = false;
             textBox.Visible = false;
             this.Invalidate();
@@ -277,8 +285,11 @@ namespace Paint
 
         private void sourceBtn_MouseClick(object sender, MouseEventArgs e)
         {
-            designBtn.BackgroundImage = new Bitmap(Properties.Resources.design_inactive);
-            sourceBtn.BackgroundImage = new Bitmap(Properties.Resources.source_active);
+            designBtn.BackColor = Color.White;
+            designBtn.FlatAppearance.BorderColor = Color.Teal;
+            designBtn.ForeColor = Color.Teal;
+            sourceBtn.BackColor = Color.Teal;
+            sourceBtn.ForeColor = Color.White;
             isSourceView = true;
             this.Invalidate();
         }

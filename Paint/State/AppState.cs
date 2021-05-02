@@ -16,6 +16,7 @@ using System.Diagnostics;
 using System.IO;
 using Paint.Shapes;
 using Paint.Utils;
+using System.Windows.Forms;
 
 namespace Paint.State
 {
@@ -85,17 +86,29 @@ namespace Paint.State
         public void Import()
         {
             shapes = new List<Shape>();
-            if (File.Exists(FILE_NAME))
+            var fileContent = string.Empty;
+            var filePath = string.Empty;
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
-                using (BinaryReader reader = new BinaryReader(File.Open(FILE_NAME, FileMode.Open)))
+                openFileDialog.Filter = "drw files (*.drw)|*.drw";
+                openFileDialog.FilterIndex = 2;
+                openFileDialog.RestoreDirectory = true;
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    string stringOfShapes = reader.ReadString();
-                    if(stringOfShapes.Length > 2)
+                    //Get the path of specified file
+                    filePath = openFileDialog.FileName;
+
+                    using (BinaryReader reader = new BinaryReader(File.Open(filePath, FileMode.Open)))
                     {
-                        ParserUtils.intParser(stringOfShapes);
-                        for (int i = 0; i < ParserUtils.parserCount(); i++)
+                        string stringOfShapes = reader.ReadString();
+                        if (stringOfShapes.Length > 2)
                         {
-                            AddShape(ParserUtils.getShape(stringOfShapes, i));
+                            ParserUtils.intParser(stringOfShapes);
+                            for (int i = 0; i < ParserUtils.parserCount(); i++)
+                            {
+                                AddShape(ParserUtils.getShape(stringOfShapes, i));
+                            }
                         }
                     }
                 }
