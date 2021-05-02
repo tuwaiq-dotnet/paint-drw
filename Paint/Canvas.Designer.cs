@@ -51,6 +51,8 @@ namespace Paint
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.button6 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // designBtn
@@ -99,6 +101,7 @@ namespace Paint
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -113,7 +116,7 @@ namespace Paint
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label3.Location = new System.Drawing.Point(185, 87);
+            this.label3.Location = new System.Drawing.Point(180, 102);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(42, 16);
             this.label3.TabIndex = 8;
@@ -124,7 +127,7 @@ namespace Paint
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label4.Location = new System.Drawing.Point(310, 162);
+            this.label4.Location = new System.Drawing.Point(341, 104);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(49, 16);
             this.label4.TabIndex = 9;
@@ -135,7 +138,7 @@ namespace Paint
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label5.Location = new System.Drawing.Point(542, 87);
+            this.label5.Location = new System.Drawing.Point(785, 281);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(49, 16);
             this.label5.TabIndex = 10;
@@ -151,7 +154,7 @@ namespace Paint
             this.rectangleBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.rectangleBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.rectangleBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rectangleBtn.Location = new System.Drawing.Point(510, 18);
+            this.rectangleBtn.Location = new System.Drawing.Point(647, 285);
             this.rectangleBtn.Name = "rectangleBtn";
             this.rectangleBtn.Size = new System.Drawing.Size(32, 34);
             this.rectangleBtn.TabIndex = 11;
@@ -168,7 +171,7 @@ namespace Paint
             this.circleBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.circleBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.circleBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.circleBtn.Location = new System.Drawing.Point(559, 18);
+            this.circleBtn.Location = new System.Drawing.Point(597, 285);
             this.circleBtn.Name = "circleBtn";
             this.circleBtn.Size = new System.Drawing.Size(32, 34);
             this.circleBtn.TabIndex = 12;
@@ -185,7 +188,7 @@ namespace Paint
             this.lineBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.lineBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.lineBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lineBtn.Location = new System.Drawing.Point(606, 18);
+            this.lineBtn.Location = new System.Drawing.Point(542, 263);
             this.lineBtn.Name = "lineBtn";
             this.lineBtn.Size = new System.Drawing.Size(32, 34);
             this.lineBtn.TabIndex = 13;
@@ -202,7 +205,7 @@ namespace Paint
             this.moveBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.moveBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.moveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.moveBtn.Location = new System.Drawing.Point(208, 31);
+            this.moveBtn.Location = new System.Drawing.Point(186, 50);
             this.moveBtn.Name = "moveBtn";
             this.moveBtn.Size = new System.Drawing.Size(32, 34);
             this.moveBtn.TabIndex = 15;
@@ -235,7 +238,7 @@ namespace Paint
             "Solid",
             "Dot",
             "Dash"});
-            this.comboBox1.Location = new System.Drawing.Point(922, 13);
+            this.comboBox1.Location = new System.Drawing.Point(681, 337);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 24);
             this.comboBox1.TabIndex = 18;
@@ -297,7 +300,7 @@ namespace Paint
             this.drawBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.drawBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.drawBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.drawBtn.Location = new System.Drawing.Point(170, 31);
+            this.drawBtn.Location = new System.Drawing.Point(186, 12);
             this.drawBtn.Name = "drawBtn";
             this.drawBtn.Size = new System.Drawing.Size(32, 34);
             this.drawBtn.TabIndex = 14;
@@ -306,6 +309,7 @@ namespace Paint
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Courier New", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -325,7 +329,7 @@ namespace Paint
             this.whiteBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.whiteBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.whiteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.whiteBtn.Location = new System.Drawing.Point(296, 12);
+            this.whiteBtn.Location = new System.Drawing.Point(305, 12);
             this.whiteBtn.Name = "whiteBtn";
             this.whiteBtn.Size = new System.Drawing.Size(36, 36);
             this.whiteBtn.TabIndex = 23;
@@ -341,7 +345,7 @@ namespace Paint
             this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(338, 12);
+            this.button1.Location = new System.Drawing.Point(347, 12);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(36, 36);
             this.button1.TabIndex = 24;
@@ -357,7 +361,7 @@ namespace Paint
             this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(380, 12);
+            this.button2.Location = new System.Drawing.Point(389, 12);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(36, 36);
             this.button2.TabIndex = 25;
@@ -365,7 +369,6 @@ namespace Paint
             // 
             // button3
             // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button3.BackColor = System.Drawing.Color.Transparent;
             this.button3.BackgroundImage = global::Paint.Properties.Resources.red;
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
@@ -374,7 +377,7 @@ namespace Paint
             this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(296, 54);
+            this.button3.Location = new System.Drawing.Point(305, 54);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(36, 36);
             this.button3.TabIndex = 26;
@@ -390,7 +393,7 @@ namespace Paint
             this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(338, 54);
+            this.button4.Location = new System.Drawing.Point(347, 54);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(36, 36);
             this.button4.TabIndex = 27;
@@ -406,11 +409,39 @@ namespace Paint
             this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Location = new System.Drawing.Point(380, 54);
+            this.button5.Location = new System.Drawing.Point(389, 54);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(36, 36);
             this.button5.TabIndex = 28;
             this.button5.UseVisualStyleBackColor = false;
+            // 
+            // label6
+            // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Courier New", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label6.Location = new System.Drawing.Point(259, 33);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(31, 32);
+            this.label6.TabIndex = 29;
+            this.label6.Text = "|";
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.Transparent;
+            this.button6.BackgroundImage = global::Paint.Properties.Resources.blue;
+            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button6.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Location = new System.Drawing.Point(431, 35);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(36, 36);
+            this.button6.TabIndex = 30;
+            this.button6.UseVisualStyleBackColor = false;
             // 
             // Canvas
             // 
@@ -418,6 +449,8 @@ namespace Paint
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -479,6 +512,8 @@ namespace Paint
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button button6;
     }
 }
 
