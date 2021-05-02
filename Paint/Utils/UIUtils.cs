@@ -13,6 +13,7 @@ namespace Paint.Utils
     {
         private static UIUtils _instance;
         private AppState state = AppState.GetInstance();
+        private Settings settings = Settings.GetInstance();
         private UIUtils()
         {
 
@@ -96,6 +97,9 @@ namespace Paint.Utils
         public void setAndClearCurrentShape(int x, int y)
         {
             setCurrentDrawingShapeX2Y2(x, y);
+            currentDrawingShape.Color = settings.Color;
+            currentDrawingShape.Thickness = settings.Thickness;
+            currentDrawingShape.Style = settings.Style;
             state.AddShape(currentDrawingShape);
 
             currentDrawingShape = null;

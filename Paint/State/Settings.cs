@@ -16,7 +16,7 @@ namespace Paint
 
         private Color color = Color.Black;
         private float thickness = 5;
-        private DashStyle style = DashStyle.Dot;
+        private DashStyle style = DashStyle.Solid;
         private Color borderColor = Color.Gray;
         private float borderThickness = 3;
         private DashStyle borderStyle = DashStyle.Dash;
