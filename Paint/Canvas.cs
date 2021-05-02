@@ -363,7 +363,7 @@ namespace Paint
             // Allows the user to get help. (The default is false.)
             MyDialog.ShowHelp = true;
             // Sets the initial color select to the current text color.
-            MyDialog.Color = BorderColorSelectionLabel.BackColor;
+            MyDialog.Color = AnchorColorSelectionLabel.BackColor;
 
             // Update the text box color if the user clicks OK 
             if (MyDialog.ShowDialog() == DialogResult.OK)
@@ -371,12 +371,12 @@ namespace Paint
                 try
                 {
                     settings.AnchorColor = MyDialog.Color;
+                    AnchorColorSelectionLabel.BackColor = settings.AnchorColor;
                 }
                 catch (Exception)
                 {
                     AnchorColorSelectionLabel.BackColor = settings.AnchorColor;
                 }
-                Invalidate();
             }
             Invalidate();
         }

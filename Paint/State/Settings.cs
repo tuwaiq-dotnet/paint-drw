@@ -21,7 +21,7 @@ namespace Paint
         private float borderThickness = 3;
         private DashStyle borderStyle = DashStyle.Dash;
         private int borderOffset = 20;
-        private Color anchorColor = Color.Red;
+        private Color anchorColor = Color.CadetBlue;
         private int anchorSize = 16;
 
         public Color Color { get { return color; } set { color = value; } }
