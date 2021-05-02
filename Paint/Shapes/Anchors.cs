@@ -39,7 +39,7 @@ namespace Paint.Shapes
             UpdateAnchors(Start, End);
             foreach (var anchor in anchors)
             {
-                g.FillRectangle(new SolidBrush(Color.Black), anchor);
+                g.FillRectangle(new SolidBrush(Color.Red), anchor);
             }
         }
         private void UpdateAnchors(Point start, Point end)
