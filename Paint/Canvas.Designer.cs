@@ -29,22 +29,22 @@ namespace Paint
         {
             this.Panel = new System.Windows.Forms.Panel();
             this.SettingsBox = new System.Windows.Forms.GroupBox();
+            this.AnchorColorSelectionLabel = new System.Windows.Forms.Label();
+            this.BorderColorSelectionLabel = new System.Windows.Forms.Label();
+            this.ColorSelectionLabel = new System.Windows.Forms.Label();
             this.ColorLabel = new System.Windows.Forms.Label();
             this.ThicknessLabel = new System.Windows.Forms.Label();
             this.StyleLabel = new System.Windows.Forms.Label();
-            this.ColorTextbox = new System.Windows.Forms.TextBox();
             this.FillComboBox = new System.Windows.Forms.CheckBox();
             this.ThicknessComboBox = new System.Windows.Forms.ComboBox();
             this.BorderOffsetCombobox = new System.Windows.Forms.ComboBox();
             this.StyleComboBox = new System.Windows.Forms.ComboBox();
-            this.BorderColorTextbox = new System.Windows.Forms.TextBox();
             this.BorderThicknessComboBox = new System.Windows.Forms.ComboBox();
             this.BorderStyleComboBox = new System.Windows.Forms.ComboBox();
             this.BorderColorLabel = new System.Windows.Forms.Label();
             this.BorderThicknessLabel = new System.Windows.Forms.Label();
             this.BorderStyleLabel = new System.Windows.Forms.Label();
             this.BorderOffsetLabel = new System.Windows.Forms.Label();
-            this.AnchorColorTextbox = new System.Windows.Forms.TextBox();
             this.AnchorColorLabel = new System.Windows.Forms.Label();
             this.AnchorSizeComboBox = new System.Windows.Forms.ComboBox();
             this.AnchorSizeLabel = new System.Windows.Forms.Label();
@@ -55,9 +55,16 @@ namespace Paint
             this.LineRadioButton = new System.Windows.Forms.RadioButton();
             this.ImportButton = new System.Windows.Forms.Button();
             this.SaveButton = new System.Windows.Forms.Button();
+            this.ToolStrip = new System.Windows.Forms.ToolStrip();
+            this.ToolStripDesignButton = new System.Windows.Forms.ToolStripButton();
+            this.ToolStripSeperator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.ToolStripSourceButton = new System.Windows.Forms.ToolStripButton();
+            this.ToolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.ToolStripMousePointLabel = new System.Windows.Forms.ToolStripLabel();
             this.Panel.SuspendLayout();
             this.SettingsBox.SuspendLayout();
             this.ToolBox.SuspendLayout();
+            this.ToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // Panel
@@ -77,22 +84,22 @@ namespace Paint
             // 
             // SettingsBox
             // 
+            this.SettingsBox.Controls.Add(this.AnchorColorSelectionLabel);
+            this.SettingsBox.Controls.Add(this.BorderColorSelectionLabel);
+            this.SettingsBox.Controls.Add(this.ColorSelectionLabel);
             this.SettingsBox.Controls.Add(this.ColorLabel);
             this.SettingsBox.Controls.Add(this.ThicknessLabel);
             this.SettingsBox.Controls.Add(this.StyleLabel);
-            this.SettingsBox.Controls.Add(this.ColorTextbox);
             this.SettingsBox.Controls.Add(this.FillComboBox);
             this.SettingsBox.Controls.Add(this.ThicknessComboBox);
             this.SettingsBox.Controls.Add(this.BorderOffsetCombobox);
             this.SettingsBox.Controls.Add(this.StyleComboBox);
-            this.SettingsBox.Controls.Add(this.BorderColorTextbox);
             this.SettingsBox.Controls.Add(this.BorderThicknessComboBox);
             this.SettingsBox.Controls.Add(this.BorderStyleComboBox);
             this.SettingsBox.Controls.Add(this.BorderColorLabel);
             this.SettingsBox.Controls.Add(this.BorderThicknessLabel);
             this.SettingsBox.Controls.Add(this.BorderStyleLabel);
             this.SettingsBox.Controls.Add(this.BorderOffsetLabel);
-            this.SettingsBox.Controls.Add(this.AnchorColorTextbox);
             this.SettingsBox.Controls.Add(this.AnchorColorLabel);
             this.SettingsBox.Controls.Add(this.AnchorSizeComboBox);
             this.SettingsBox.Controls.Add(this.AnchorSizeLabel);
@@ -102,6 +109,42 @@ namespace Paint
             this.SettingsBox.TabIndex = 5;
             this.SettingsBox.TabStop = false;
             this.SettingsBox.Text = "Settings";
+            // 
+            // AnchorColorSelectionLabel
+            // 
+            this.AnchorColorSelectionLabel.AutoSize = true;
+            this.AnchorColorSelectionLabel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.AnchorColorSelectionLabel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.AnchorColorSelectionLabel.Location = new System.Drawing.Point(196, 450);
+            this.AnchorColorSelectionLabel.MinimumSize = new System.Drawing.Size(169, 43);
+            this.AnchorColorSelectionLabel.Name = "AnchorColorSelectionLabel";
+            this.AnchorColorSelectionLabel.Size = new System.Drawing.Size(169, 43);
+            this.AnchorColorSelectionLabel.TabIndex = 14;
+            this.AnchorColorSelectionLabel.Click += new System.EventHandler(this.AnchorColorSelectionLabel_Click);
+            // 
+            // BorderColorSelectionLabel
+            // 
+            this.BorderColorSelectionLabel.AutoSize = true;
+            this.BorderColorSelectionLabel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BorderColorSelectionLabel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BorderColorSelectionLabel.Location = new System.Drawing.Point(197, 296);
+            this.BorderColorSelectionLabel.MinimumSize = new System.Drawing.Size(169, 43);
+            this.BorderColorSelectionLabel.Name = "BorderColorSelectionLabel";
+            this.BorderColorSelectionLabel.Size = new System.Drawing.Size(169, 43);
+            this.BorderColorSelectionLabel.TabIndex = 14;
+            this.BorderColorSelectionLabel.Click += new System.EventHandler(this.BorderColorSelectionLabel_Click);
+            // 
+            // ColorSelectionLabel
+            // 
+            this.ColorSelectionLabel.AutoSize = true;
+            this.ColorSelectionLabel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ColorSelectionLabel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ColorSelectionLabel.Location = new System.Drawing.Point(196, 145);
+            this.ColorSelectionLabel.MinimumSize = new System.Drawing.Size(169, 43);
+            this.ColorSelectionLabel.Name = "ColorSelectionLabel";
+            this.ColorSelectionLabel.Size = new System.Drawing.Size(169, 43);
+            this.ColorSelectionLabel.TabIndex = 13;
+            this.ColorSelectionLabel.Click += new System.EventHandler(this.ColorSelectionLabel_Click);
             // 
             // ColorLabel
             // 
@@ -129,15 +172,6 @@ namespace Paint
             this.StyleLabel.Size = new System.Drawing.Size(79, 37);
             this.StyleLabel.TabIndex = 10;
             this.StyleLabel.Text = "Style:";
-            // 
-            // ColorTextbox
-            // 
-            this.ColorTextbox.Location = new System.Drawing.Point(197, 145);
-            this.ColorTextbox.MaxLength = 7;
-            this.ColorTextbox.Name = "ColorTextbox";
-            this.ColorTextbox.Size = new System.Drawing.Size(169, 43);
-            this.ColorTextbox.TabIndex = 3;
-            this.ColorTextbox.Text = "Color";
             // 
             // FillComboBox
             // 
@@ -272,7 +306,7 @@ namespace Paint
             this.BorderOffsetCombobox.Text = "Offset";
             this.BorderOffsetCombobox.SelectedIndexChanged += new System.EventHandler(this.BorderOffsetCombobox_SelectedIndexChanged);
             // 
-            // DashStyleComboBox
+            // StyleComboBox
             // 
             this.StyleComboBox.FormattingEnabled = true;
             this.StyleComboBox.Items.AddRange(new object[] {
@@ -282,19 +316,11 @@ namespace Paint
             "Dash-Dot",
             "Dash-Dot-Dot"});
             this.StyleComboBox.Location = new System.Drawing.Point(197, 42);
-            this.StyleComboBox.Name = "DashStyleComboBox";
+            this.StyleComboBox.Name = "StyleComboBox";
             this.StyleComboBox.Size = new System.Drawing.Size(169, 45);
             this.StyleComboBox.TabIndex = 1;
             this.StyleComboBox.Text = "Style";
             this.StyleComboBox.SelectedIndexChanged += new System.EventHandler(this.StyleComboBox_SelectedIndexChanged);
-            // 
-            // BorderColorTextbox
-            // 
-            this.BorderColorTextbox.Location = new System.Drawing.Point(197, 296);
-            this.BorderColorTextbox.Name = "BorderColorTextbox";
-            this.BorderColorTextbox.Size = new System.Drawing.Size(168, 43);
-            this.BorderColorTextbox.TabIndex = 8;
-            this.BorderColorTextbox.Text = "Color";
             // 
             // BorderThicknessComboBox
             // 
@@ -408,14 +434,6 @@ namespace Paint
             this.BorderOffsetLabel.Size = new System.Drawing.Size(179, 37);
             this.BorderOffsetLabel.TabIndex = 4;
             this.BorderOffsetLabel.Text = "Border Offset:";
-            // 
-            // AnchorColorTextbox
-            // 
-            this.AnchorColorTextbox.Location = new System.Drawing.Point(197, 447);
-            this.AnchorColorTextbox.Name = "AnchorColorTextbox";
-            this.AnchorColorTextbox.Size = new System.Drawing.Size(168, 43);
-            this.AnchorColorTextbox.TabIndex = 3;
-            this.AnchorColorTextbox.Text = "Color";
             // 
             // AnchorColorLabel
             // 
@@ -575,14 +593,66 @@ namespace Paint
             this.SaveButton.Text = "Save";
             this.SaveButton.UseVisualStyleBackColor = true;
             // 
+            // ToolStrip
+            // 
+            this.ToolStrip.BackColor = System.Drawing.SystemColors.Control;
+            this.ToolStrip.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.ToolStrip.ImageScalingSize = new System.Drawing.Size(36, 36);
+            this.ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ToolStripDesignButton,
+            this.ToolStripSeperator1,
+            this.ToolStripSourceButton,
+            this.ToolStripSeparator2,
+            this.ToolStripMousePointLabel});
+            this.ToolStrip.Location = new System.Drawing.Point(0, 1408);
+            this.ToolStrip.Name = "ToolStrip";
+            this.ToolStrip.Size = new System.Drawing.Size(1978, 47);
+            this.ToolStrip.TabIndex = 1;
+            this.ToolStrip.Text = "toolStrip1";
+            // 
+            // ToolStripDesignButton
+            // 
+            this.ToolStripDesignButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.ToolStripDesignButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ToolStripDesignButton.Name = "ToolStripDesignButton";
+            this.ToolStripDesignButton.Size = new System.Drawing.Size(103, 41);
+            this.ToolStripDesignButton.Text = "Design";
+            // 
+            // ToolStripSeperator1
+            // 
+            this.ToolStripSeperator1.Name = "ToolStripSeperator1";
+            this.ToolStripSeperator1.Size = new System.Drawing.Size(6, 47);
+            // 
+            // ToolStripSourceButton
+            // 
+            this.ToolStripSourceButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.ToolStripSourceButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ToolStripSourceButton.Name = "ToolStripSourceButton";
+            this.ToolStripSourceButton.Size = new System.Drawing.Size(101, 41);
+            this.ToolStripSourceButton.Text = "Source";
+            // 
+            // ToolStripSeparator2
+            // 
+            this.ToolStripSeparator2.Name = "ToolStripSeparator2";
+            this.ToolStripSeparator2.Size = new System.Drawing.Size(6, 47);
+            // 
+            // ToolStripMousePointLabel
+            // 
+            this.ToolStripMousePointLabel.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.ToolStripMousePointLabel.Name = "ToolStripMousePointLabel";
+            this.ToolStripMousePointLabel.Size = new System.Drawing.Size(0, 41);
+            this.ToolStripMousePointLabel.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
+            // 
             // Canvas
             // 
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1978, 1455);
+            this.Controls.Add(this.ToolStrip);
             this.Controls.Add(this.Panel);
             this.DoubleBuffered = true;
             this.Name = "Canvas";
             this.Text = "Paint";
+            this.Load += new System.EventHandler(this.Canvas_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Canvas_Paint);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Canvas_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Canvas_MouseMove);
@@ -592,7 +662,10 @@ namespace Paint
             this.SettingsBox.PerformLayout();
             this.ToolBox.ResumeLayout(false);
             this.ToolBox.PerformLayout();
+            this.ToolStrip.ResumeLayout(false);
+            this.ToolStrip.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -606,23 +679,31 @@ namespace Paint
         private System.Windows.Forms.RadioButton SelectionRadioButton;
         private System.Windows.Forms.RadioButton RectangleRadioButton;
         private System.Windows.Forms.CheckBox FillComboBox;
-        private System.Windows.Forms.TextBox ColorTextbox;
         private System.Windows.Forms.ComboBox ThicknessComboBox;
         private System.Windows.Forms.ComboBox StyleComboBox;
         private System.Windows.Forms.Label ColorLabel;
         private System.Windows.Forms.Label ThicknessLabel;
         private System.Windows.Forms.Label StyleLabel;
         private System.Windows.Forms.ComboBox BorderOffsetCombobox;
-        private System.Windows.Forms.TextBox BorderColorTextbox;
         private System.Windows.Forms.ComboBox BorderThicknessComboBox;
         private System.Windows.Forms.ComboBox BorderStyleComboBox;
         private System.Windows.Forms.Label BorderColorLabel;
         private System.Windows.Forms.Label BorderThicknessLabel;
         private System.Windows.Forms.Label BorderStyleLabel;
         private System.Windows.Forms.Label BorderOffsetLabel;
-        private System.Windows.Forms.TextBox AnchorColorTextbox;
         private System.Windows.Forms.Label AnchorColorLabel;
         private System.Windows.Forms.ComboBox AnchorSizeComboBox;
         private System.Windows.Forms.Label AnchorSizeLabel;
+        private System.Windows.Forms.ToolStrip ToolStrip;
+        private System.Windows.Forms.ToolStripButton ToolStripDesignButton;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ToolStripButton ToolStripSourceButton;
+        private System.Windows.Forms.ToolStripSeparator ToolStripSeperator1;
+        private System.Windows.Forms.ToolStripSeparator ToolStripSeparator2;
+        private System.Windows.Forms.ToolStripLabel ToolStripMousePointLabel;
+        private System.Windows.Forms.Label AnchorColorSelectionLabel;
+        private System.Windows.Forms.Label BorderColorSelectionLabel;
+        private System.Windows.Forms.Label ColorSelectionLabel;
     }
 }

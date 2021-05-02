@@ -30,19 +30,22 @@ namespace Paint
         public Canvas()
         {
             InitializeComponent();
+            AnchorSizeComboBox.Text = settings.AnchorSize.ToString();
+            AnchorColorSelectionLabel.BackColor = settings.AnchorColor;
+
+            BorderOffsetCombobox.Text = settings.BorderOffset.ToString();
+            BorderThicknessComboBox.Text = settings.BorderThickness.ToString();
+            BorderStyleComboBox.Text = settings.BorderStyle.ToString();
+            BorderColorSelectionLabel.BackColor = settings.BorderColor;
+
+            StyleComboBox.Text = settings.Style.ToString();
+            ThicknessComboBox.Text = settings.Thickness.ToString();
+            ColorSelectionLabel.BackColor = settings.Color;
         }
 
         private void Canvas_Load(object sender, EventArgs e)
         {
             state.SelectedTool = Tools.Line;
-            AnchorSizeComboBox.Text = settings.AnchorSize.ToString();
-
-            BorderOffsetCombobox.Text = settings.BorderOffset.ToString();
-            BorderThicknessComboBox.Text = settings.BorderThickness.ToString();
-            BorderStyleComboBox.Text = settings.BorderStyle.ToString();
-
-            StyleComboBox.Text = settings.Style.ToString();
-            ThicknessComboBox.Text = settings.Thickness.ToString();
         }
 
         private void LineRadioButton_CheckedChanged(object sender, EventArgs e)
@@ -127,8 +130,8 @@ namespace Paint
                 StyleComboBox.Text = ui.selectedShape.Style.ToString();
                 ThicknessComboBox.Enabled = true;
                 ThicknessComboBox.Text = ui.selectedShape.Thickness.ToString();
-                ColorTextbox.Enabled = true;
-                ColorTextbox.Text = ui.selectedShape.Color.ToString();
+                ColorSelectionLabel.Enabled = true;
+                ColorSelectionLabel.BackColor = ui.selectedShape.Color;
                 FillComboBox.Enabled = true;
                 FillComboBox.Checked = ui.selectedShape.IsFilled;
                 Invalidate();
@@ -144,6 +147,7 @@ namespace Paint
         }
         private void Canvas_MouseMove(object sender, MouseEventArgs e)
         {
+            ToolStripMousePointLabel.Text = $"X: {e.X}, Y: {e.Y}";
             Cursor = ui.GetCursor(e.X, e.Y);
             if (ui.isHolding)
             {
@@ -175,7 +179,7 @@ namespace Paint
             {
                 StyleComboBox.Text = ui.selectedShape.Style.ToString();
                 ThicknessComboBox.Text = ui.selectedShape.Thickness.ToString();
-                ColorTextbox.Text = ui.selectedShape.Color.ToString();
+                ColorSelectionLabel.Text = ui.selectedShape.Color.ToString();
             }
             ui.resetSelection();
             Invalidate();
@@ -285,6 +289,94 @@ namespace Paint
             catch (Exception)
             {
                 BorderStyleComboBox.SelectedIndex = (int)settings.BorderStyle;
+            }
+            Invalidate();
+        }
+
+        private void ColorSelectionLabel_Click(object sender, EventArgs e)
+        {
+            ColorDialog MyDialog = new ColorDialog();
+            // Keeps the user from selecting a custom color.
+            MyDialog.AllowFullOpen = true;
+            // Allows the user to get help. (The default is false.)
+            MyDialog.ShowHelp = true;
+            // Sets the initial color select to the current text color.
+            MyDialog.Color = ColorSelectionLabel.BackColor;
+
+            // Update the text box color if the user clicks OK 
+            if (MyDialog.ShowDialog() == DialogResult.OK)
+            {
+                if (ui.selectedShape != null)
+                    try
+                    {
+                        ui.selectedShape.Color = MyDialog.Color;
+                    }
+                    catch (Exception)
+                    {
+                    }
+                else
+                    try
+                    {
+                        settings.Color = MyDialog.Color;
+                    }
+                    catch (Exception)
+                    {
+                    }
+            }
+            Invalidate();
+
+        }
+
+        private void BorderColorSelectionLabel_Click(object sender, EventArgs e)
+        {
+            ColorDialog MyDialog = new ColorDialog();
+            // Keeps the user from selecting a custom color.
+            MyDialog.AllowFullOpen = true;
+            // Allows the user to get help. (The default is false.)
+            MyDialog.ShowHelp = true;
+            // Sets the initial color select to the current text color.
+            MyDialog.Color = BorderColorSelectionLabel.BackColor;
+
+            // Update the text box color if the user clicks OK 
+            if (MyDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    settings.BorderColor = MyDialog.Color;
+                }
+                catch (Exception)
+                {
+                    BorderColorSelectionLabel.BackColor = settings.BorderColor;
+                }
+                Invalidate();
+            }
+            Invalidate();
+            
+        }
+
+        private void AnchorColorSelectionLabel_Click(object sender, EventArgs e)
+        {
+
+            ColorDialog MyDialog = new ColorDialog();
+            // Keeps the user from selecting a custom color.
+            MyDialog.AllowFullOpen = true;
+            // Allows the user to get help. (The default is false.)
+            MyDialog.ShowHelp = true;
+            // Sets the initial color select to the current text color.
+            MyDialog.Color = BorderColorSelectionLabel.BackColor;
+
+            // Update the text box color if the user clicks OK 
+            if (MyDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    settings.AnchorColor = MyDialog.Color;
+                }
+                catch (Exception)
+                {
+                    AnchorColorSelectionLabel.BackColor = settings.AnchorColor;
+                }
+                Invalidate();
             }
             Invalidate();
         }
