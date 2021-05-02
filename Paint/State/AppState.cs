@@ -86,8 +86,6 @@ namespace Paint.State
         public void Import()
         {
             shapes = new List<Shape>();
-            var fileContent = string.Empty;
-            var filePath = string.Empty;
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
                 openFileDialog.Filter = "drw files (*.drw)|*.drw";
@@ -97,7 +95,7 @@ namespace Paint.State
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     //Get the path of specified file
-                    filePath = openFileDialog.FileName;
+                    var filePath = openFileDialog.FileName;
 
                     using (BinaryReader reader = new BinaryReader(File.Open(filePath, FileMode.Open)))
                     {
@@ -134,14 +132,7 @@ namespace Paint.State
             {
                 AddShape(ParserUtils.getShape(updateSource, i));
             }
-
-            Debug.WriteLine("RECOMPILE SUCCESS!");
         }
-
-        // Anas Section
-        // Add all Shapes classes implementation here
-        // update shapes from here
-        // add any method you need like GetCurrentShape() or setCurrentShape();
     }
     public enum Tools
     {

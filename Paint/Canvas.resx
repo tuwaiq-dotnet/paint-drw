@@ -57,4 +57,105 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="SourceTextbox.Text" xml:space="preserve">
+    <value>[
+  {
+    "Start": "747, 150",
+    "End": "1102, 491",
+    "Width": 355,
+    "Height": 341,
+    "IsSelected": false,
+    "Type": 0,
+    "IsFilled": false,
+    "Color": "Black",
+    "Thickness": 5.0,
+    "Style": 0
+  },
+  {
+    "Start": "220, 200",
+    "End": "548, 558",
+    "Width": 328,
+    "Height": 358,
+    "IsSelected": false,
+    "Type": 0,
+    "IsFilled": false,
+    "Color": "Black",
+    "Thickness": 5.0,
+    "Style": 0
+  },
+  {
+    "Start": "665, 674",
+    "End": "725, 737",
+    "Width": 60,
+    "Height": 63,
+    "IsSelected": false,
+    "Type": 0,
+    "IsFilled": false,
+    "Color": "Black",
+    "Thickness": 5.0,
+    "Style": 0
+  },
+  {
+    "Start": "340, 945",
+    "End": "1297, 1037",
+    "Width": 957,
+    "Height": 92,
+    "IsSelected": false,
+    "Type": 0,
+    "IsFilled": false,
+    "Color": "Black",
+    "Thickness": 5.0,
+    "Style": 0
+  },
+  {
+    "Start": "987, 235",
+    "End": "935, 312",
+    "Width": 52,
+    "Height": 77,
+    "IsSelected": false,
+    "Type": 1,
+    "IsFilled": false,
+    "Color": "Black",
+    "Thickness": 5.0,
+    "Style": 0
+  },
+  {
+    "Start": "427, 343",
+    "End": "365, 469",
+    "Width": 62,
+    "Height": 126,
+    "IsSelected": false,
+    "Type": 1,
+    "IsFilled": false,
+    "Color": "Black",
+    "Thickness": 5.0,
+    "Style": 0
+  },
+  {
+    "Start": "695, 643",
+    "End": "864, 830",
+    "Width": 169,
+    "Height": 187,
+    "IsSelected": false,
+    "Type": 1,
+    "IsFilled": false,
+    "Color": "Black",
+    "Thickness": 5.0,
+    "Style": 0
+  },
+  {
+    "Start": "155, 161",
+    "End": "1558, 1229",
+    "Width": 1403,
+    "Height": 1068,
+    "IsSelected": false,
+    "Type": 1,
+    "IsFilled": false,
+    "Color": "Black",
+    "Thickness": 5.0,
+    "Style": 0
+  }
+]
+</value>
+  </data>
 </root>

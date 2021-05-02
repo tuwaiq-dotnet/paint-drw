@@ -27,6 +27,7 @@ namespace Paint
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Canvas));
             this.Panel = new System.Windows.Forms.Panel();
             this.SettingsBox = new System.Windows.Forms.GroupBox();
             this.AnchorColorSelectionLabel = new System.Windows.Forms.Label();
@@ -61,6 +62,7 @@ namespace Paint
             this.ToolStripSourceButton = new System.Windows.Forms.ToolStripButton();
             this.ToolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.ToolStripMousePointLabel = new System.Windows.Forms.ToolStripLabel();
+            this.SourceTextbox = new System.Windows.Forms.TextBox();
             this.Panel.SuspendLayout();
             this.SettingsBox.SuspendLayout();
             this.ToolBox.SuspendLayout();
@@ -583,6 +585,7 @@ namespace Paint
             this.ImportButton.TabIndex = 2;
             this.ImportButton.Text = "Import";
             this.ImportButton.UseVisualStyleBackColor = true;
+            this.ImportButton.Click += new System.EventHandler(this.ImportButton_Click);
             // 
             // SaveButton
             // 
@@ -592,6 +595,7 @@ namespace Paint
             this.SaveButton.TabIndex = 1;
             this.SaveButton.Text = "Save";
             this.SaveButton.UseVisualStyleBackColor = true;
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // ToolStrip
             // 
@@ -617,6 +621,7 @@ namespace Paint
             this.ToolStripDesignButton.Name = "ToolStripDesignButton";
             this.ToolStripDesignButton.Size = new System.Drawing.Size(103, 41);
             this.ToolStripDesignButton.Text = "Design";
+            this.ToolStripDesignButton.Click += new System.EventHandler(this.ToolStripDesignButton_Click);
             // 
             // ToolStripSeperator1
             // 
@@ -630,6 +635,7 @@ namespace Paint
             this.ToolStripSourceButton.Name = "ToolStripSourceButton";
             this.ToolStripSourceButton.Size = new System.Drawing.Size(101, 41);
             this.ToolStripSourceButton.Text = "Source";
+            this.ToolStripSourceButton.Click += new System.EventHandler(this.ToolStripSourceButton_Click);
             // 
             // ToolStripSeparator2
             // 
@@ -643,10 +649,23 @@ namespace Paint
             this.ToolStripMousePointLabel.Size = new System.Drawing.Size(0, 41);
             this.ToolStripMousePointLabel.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
             // 
+            // SourceTextbox
+            // 
+            this.SourceTextbox.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.SourceTextbox.Location = new System.Drawing.Point(12, 12);
+            this.SourceTextbox.Multiline = true;
+            this.SourceTextbox.Name = "SourceTextbox";
+            this.SourceTextbox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.SourceTextbox.Size = new System.Drawing.Size(1954, 1393);
+            this.SourceTextbox.TabIndex = 2;
+            this.SourceTextbox.Text = resources.GetString("SourceTextbox.Text");
+            this.SourceTextbox.Visible = false;
+            // 
             // Canvas
             // 
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1978, 1455);
+            this.Controls.Add(this.SourceTextbox);
             this.Controls.Add(this.ToolStrip);
             this.Controls.Add(this.Panel);
             this.DoubleBuffered = true;
@@ -705,5 +724,6 @@ namespace Paint
         private System.Windows.Forms.Label AnchorColorSelectionLabel;
         private System.Windows.Forms.Label BorderColorSelectionLabel;
         private System.Windows.Forms.Label ColorSelectionLabel;
+        private System.Windows.Forms.TextBox SourceTextbox;
     }
 }

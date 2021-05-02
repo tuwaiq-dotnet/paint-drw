@@ -381,6 +381,32 @@ namespace Paint
             Invalidate();
         }
 
+        private void ToolStripDesignButton_Click(object sender, EventArgs e)
+        {
+            state.Recompile(SourceTextbox.Text);
+            SourceTextbox.Visible = false;
+            Invalidate();
+
+        }
+
+        private void ToolStripSourceButton_Click(object sender, EventArgs e)
+        {
+            SourceTextbox.Text = state.StringifyShapes();
+            SourceTextbox.Visible = true;
+            Invalidate();
+        }
+
+        private void ImportButton_Click(object sender, EventArgs e)
+        {
+            state.Import();
+            Invalidate();
+        }
+
+        private void SaveButton_Click(object sender, EventArgs e)
+        {
+            state.Save();
+            Invalidate();
+        }
         /*
 private void Canvas_Paint(object sender, PaintEventArgs e)
 {
