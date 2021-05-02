@@ -253,6 +253,7 @@ namespace Paint
         private void openBtn_Click(object sender, EventArgs e)
         {
             state.Import();
+            this.Invalidate();
         }
 
         private void designBtn_Click(object sender, EventArgs e)

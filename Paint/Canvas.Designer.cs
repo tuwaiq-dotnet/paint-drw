@@ -44,41 +44,50 @@ namespace Paint
             this.moveBtn = new System.Windows.Forms.Button();
             this.textBox = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // designBtn
             // 
             this.designBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.designBtn.BackColor = System.Drawing.Color.Transparent;
-            this.designBtn.BackgroundImage = global::Paint.Properties.Resources.design_active;
+            this.designBtn.AutoSize = true;
+            this.designBtn.BackColor = System.Drawing.Color.Teal;
             this.designBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.designBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.designBtn.FlatAppearance.BorderSize = 0;
+            this.designBtn.FlatAppearance.BorderColor = System.Drawing.Color.Teal;
             this.designBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.designBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.designBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.designBtn.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.designBtn.ForeColor = System.Drawing.Color.White;
             this.designBtn.Location = new System.Drawing.Point(12, 637);
             this.designBtn.Name = "designBtn";
             this.designBtn.Size = new System.Drawing.Size(100, 32);
             this.designBtn.TabIndex = 2;
+            this.designBtn.Text = "Design";
             this.designBtn.UseVisualStyleBackColor = false;
             this.designBtn.MouseClick += new System.Windows.Forms.MouseEventHandler(this.designBtn_MouseClick);
             // 
             // sourceBtn
             // 
             this.sourceBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.sourceBtn.AutoSize = true;
             this.sourceBtn.BackColor = System.Drawing.Color.Transparent;
-            this.sourceBtn.BackgroundImage = global::Paint.Properties.Resources.source_inactive;
             this.sourceBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.sourceBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.sourceBtn.FlatAppearance.BorderSize = 0;
+            this.sourceBtn.FlatAppearance.BorderColor = System.Drawing.Color.Teal;
+            this.sourceBtn.FlatAppearance.BorderSize = 2;
             this.sourceBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.sourceBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.sourceBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sourceBtn.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.sourceBtn.ForeColor = System.Drawing.Color.Teal;
             this.sourceBtn.Location = new System.Drawing.Point(118, 637);
             this.sourceBtn.Name = "sourceBtn";
             this.sourceBtn.Size = new System.Drawing.Size(100, 32);
             this.sourceBtn.TabIndex = 3;
+            this.sourceBtn.Text = "Source";
             this.sourceBtn.UseVisualStyleBackColor = false;
             this.sourceBtn.MouseClick += new System.Windows.Forms.MouseEventHandler(this.sourceBtn_MouseClick);
             // 
@@ -142,7 +151,7 @@ namespace Paint
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label3.Location = new System.Drawing.Point(199, 82);
+            this.label3.Location = new System.Drawing.Point(249, 64);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(42, 16);
             this.label3.TabIndex = 8;
@@ -231,7 +240,7 @@ namespace Paint
             this.drawBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.drawBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.drawBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.drawBtn.Location = new System.Drawing.Point(412, 323);
+            this.drawBtn.Location = new System.Drawing.Point(235, 12);
             this.drawBtn.Name = "drawBtn";
             this.drawBtn.Size = new System.Drawing.Size(32, 32);
             this.drawBtn.TabIndex = 14;
@@ -248,7 +257,7 @@ namespace Paint
             this.moveBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.moveBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.moveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.moveBtn.Location = new System.Drawing.Point(260, 264);
+            this.moveBtn.Location = new System.Drawing.Point(273, 12);
             this.moveBtn.Name = "moveBtn";
             this.moveBtn.Size = new System.Drawing.Size(32, 32);
             this.moveBtn.TabIndex = 15;
@@ -287,12 +296,27 @@ namespace Paint
             this.comboBox1.TabIndex = 18;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Cross;
+            this.pictureBox1.Image = global::Paint.Properties.Resources.bar;
+            this.pictureBox1.Location = new System.Drawing.Point(180, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(24, 32);
+            this.pictureBox1.TabIndex = 19;
+            this.pictureBox1.TabStop = false;
+            // 
             // Canvas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.textBox);
             this.Controls.Add(this.moveBtn);
@@ -318,6 +342,7 @@ namespace Paint
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Canvas_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Canvas_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Canvas_MouseUp);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -339,6 +364,7 @@ namespace Paint
         private System.Windows.Forms.Button moveBtn;
         private System.Windows.Forms.TextBox textBox;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

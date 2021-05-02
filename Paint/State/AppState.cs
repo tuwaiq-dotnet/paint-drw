@@ -45,6 +45,15 @@ namespace Paint.State
             selectedTool = Tools.Line;
         }
 
+        public void Clear()
+        {
+            shapes = new List<Shape>();
+            settings = Settings.GetInstance();
+            currentShape = null;
+            shapesCount = 0;
+            selectedTool = Tools.Line;
+        }
+
         public static AppState GetInstance()
         {
             if (_instance == null) _instance = new();
@@ -75,21 +84,19 @@ namespace Paint.State
 
         public void Import()
         {
+            shapes = new List<Shape>();
             if (File.Exists(FILE_NAME))
             {
                 using (BinaryReader reader = new BinaryReader(File.Open(FILE_NAME, FileMode.Open)))
                 {
-                    // Faisal Section
-                    // Run the app
-                    // add a few shapes
-                    // Add Tokenizer
-                    // Add Parser
-                    // return new shapes
                     string stringOfShapes = reader.ReadString();
-                    ParserUtils.intParser(stringOfShapes);
-                    for (int i = 0; i < ParserUtils.parserCount(); i++)
+                    if(stringOfShapes.Length > 2)
                     {
-                        AddShape(ParserUtils.getShape(stringOfShapes, i));
+                        ParserUtils.intParser(stringOfShapes);
+                        for (int i = 0; i < ParserUtils.parserCount(); i++)
+                        {
+                            AddShape(ParserUtils.getShape(stringOfShapes, i));
+                        }
                     }
                 }
             }
