@@ -383,7 +383,8 @@ namespace Paint
 
         private void ToolStripDesignButton_Click(object sender, EventArgs e)
         {
-            state.Recompile(SourceTextbox.Text);
+            if (SourceTextbox.Text.Length > 2) state.Recompile(SourceTextbox.Text);
+            else state.Clear();
             SourceTextbox.Visible = false;
             Invalidate();
 

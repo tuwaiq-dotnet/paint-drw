@@ -127,7 +127,8 @@ namespace Paint.State
         public void Recompile(string updateSource)
         {
             shapes = new List<Shape>();
-            ParserUtils.intParser(updateSource);
+            if (updateSource.Length > 2) return;
+                ParserUtils.intParser(updateSource);
             for (int i = 0; i < ParserUtils.parserCount(); i++)
             {
                 AddShape(ParserUtils.getShape(updateSource, i));
